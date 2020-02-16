@@ -16,6 +16,7 @@ import com.revature.project0.core.Vehicle;
 
 public class SerializationDAO<T> {
 	private static Logger log = Logger.getRootLogger();
+	private final String directoryName = "src\\main\\resources\\DAOFiles\\";
 	public void writeSerial(T t) {
 		String fileName = "";
 
@@ -46,15 +47,13 @@ public class SerializationDAO<T> {
 		}
 		log.info("writeSerial called");
 
-		String locationName = "src\\main\\resources\\DAOFiles\\" + fileName + ".dat";
-		System.out.println(locationName);
+		String locationName = directoryName + fileName + "s\\" + fileName + ".dat";
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		log.info("Variables initialized");
 		try {
 			fos = new FileOutputStream(locationName);
 			oos = new ObjectOutputStream(fos); // This does all the heavy-lifting of serialization
-			//oos.writeObject(o);
 			if(t instanceof Employee) {
 				oos.writeObject(e2);
 			} else if(t instanceof Customer) {
@@ -64,7 +63,6 @@ public class SerializationDAO<T> {
 			}
 			log.debug("file steams opened and written successfully");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			log.error("FileNotFoundException occurred");
 			e.printStackTrace();
 		} catch(IOException e) {
@@ -94,7 +92,7 @@ public class SerializationDAO<T> {
 			System.exit(-102);
 		}
 		
-		String locationName = "src\\main\\resources\\DAOFiles\\" + id + ".dat";
+		String locationName = directoryName + id + "s\\" + id + ".dat";
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		Object o = new Object();
@@ -112,7 +110,6 @@ public class SerializationDAO<T> {
 			}
 			log.debug("Ended try 1");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch(IOException e) {
 			e.printStackTrace();
