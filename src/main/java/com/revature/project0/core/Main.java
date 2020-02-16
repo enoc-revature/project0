@@ -29,9 +29,10 @@ public class Main {
 						break;
 			default  : exitProgram=true;
 			}
-			exitProgram = true; // Avoid infinite loop atm
+			//exitProgram = true; // Avoid infinite loop atm
 		}
-		
+		System.out.println("Have a nice day!");
+		log.debug("Program terminated soundly.");
 	}
 
 }
