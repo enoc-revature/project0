@@ -11,13 +11,15 @@ public class Vehicle implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	String make;
-	String model;
-	String year;
-	String mileage;
-	String condition; // make enum later
-	transient ArrayList<String> bid;
-	transient ArrayList<String >offer;
-	String vin;
-	boolean pended;
+	public String make;
+	public String model;
+	public String year;
+	public String mileage;
+	public String condition; // make enum later
+	public transient ArrayList<String> bid;
+	public transient ArrayList<String >offer;
+	public String vin;
+	public String owner = "Dealership";
+	public transient String monthlyPayment;
+	public boolean pended;
 }

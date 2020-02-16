@@ -11,12 +11,13 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.revature.project0.core.Customer;
+import com.revature.project0.core.DealershipSystem;
 import com.revature.project0.core.Employee;
 import com.revature.project0.core.Vehicle;
 
 public class SerializationDAO<T> {
 	private static Logger log = Logger.getRootLogger();
-	private final String directoryName = "src\\main\\resources\\DAOFiles\\";
+	//private final String directoryName = "src\\main\\resources\\DAOFiles\\";
 	public void writeSerial(T t) {
 		String fileName = "";
 
@@ -28,26 +29,30 @@ public class SerializationDAO<T> {
 
 		Vehicle vehicle = null;
 		Vehicle v2 = new Vehicle();
+		String locationName = "";
 
 		if(t instanceof Employee) {
-			fileName = "employee";
 			employee = (Employee) t;
 			e2 = employee;
+			fileName = "_E_" + e2.id + ".dat";
+			locationName = DealershipSystem.DIRECTORYNAME + "employees\\" + fileName + ".dat";
 		} else if(t instanceof Customer) {
-			fileName = "customer";
 			customer = (Customer) t;
 			c2 = customer;
+			fileName = "_C_" + c2.creditCard + ".dat";
+			locationName = DealershipSystem.DIRECTORYNAME + "customers\\" + fileName + ".dat";
 		} else if(t instanceof Vehicle) {
-			fileName = "vehicle";
 			vehicle = (Vehicle) t;
 			v2 = vehicle;
+			fileName = "_V_" + v2.vin + ".dat";
+			locationName = DealershipSystem.DIRECTORYNAME + "vehicles\\" + fileName + ".dat";
 		} else {
 			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
 			System.exit(-101);
 		}
 		log.info("writeSerial called");
 
-		String locationName = directoryName + fileName + "s\\" + fileName + ".dat";
+		//String locationName = DealershipSystem.DIRECTORYNAME + fileName + "s\\" + fileName + ".dat";
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		log.info("Variables initialized");
@@ -87,12 +92,26 @@ public class SerializationDAO<T> {
 		Customer customer = null;
 		Vehicle vehicle = null;
 
+		/*
 		if(id!="employee" && id!="customer" && id!="vehicle") {
-			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
-			System.exit(-102);
 		}
+		*/
 		
-		String locationName = directoryName + id + "s\\" + id + ".dat";
+		char pathOption = id.charAt(1);
+		String locationName = "";
+		locationName = DealershipSystem.DIRECTORYNAME + id + "s\\" + id + ".dat";
+		switch(pathOption) {
+		case 'E' : locationName = DealershipSystem.DIRECTORYNAME + "employees\\" + id + ".dat";;
+					break;
+		case 'C' : locationName = DealershipSystem.DIRECTORYNAME + "customers\\" + id + ".dat";;
+					break;
+		case 'V' : locationName = DealershipSystem.DIRECTORYNAME + "vehicless\\" + id + ".dat";;
+					break;
+		default: System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
+				 System.exit(-102);
+		}
+
+		//String locationName = DealershipSystem.DIRECTORYNAME + id + "s\\" + id + ".dat";
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		Object o = new Object();
@@ -101,11 +120,20 @@ public class SerializationDAO<T> {
 			log.debug("Started try 1");
 			fis = new FileInputStream(locationName);
 			ois = new ObjectInputStream(fis); // This does all the heavy-lifting of serialization
+			/*
 			if(id == "employee") {
 				employee = (Employee) ois.readObject();
 			} else if(id == "customer") {
 				customer = (Customer) ois.readObject();
 			} else if(id == "vehicle") {
+				vehicle = (Vehicle) ois.readObject();
+			}
+			*/
+			if(pathOption == 'E') {
+				employee = (Employee) ois.readObject();
+			} else if(pathOption == 'C') {
+				customer = (Customer) ois.readObject();
+			} else if(pathOption == 'V') {
 				vehicle = (Vehicle) ois.readObject();
 			}
 			log.debug("Ended try 1");

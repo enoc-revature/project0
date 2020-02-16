@@ -1,8 +1,14 @@
 package com.revature.project0.core;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 public class Menus {
+	private static Logger log = Logger.getRootLogger();
 	Scanner s = new Scanner(System.in);
 
 	public void employeeMenu() {
@@ -100,12 +106,52 @@ public class Menus {
 		DealershipSystem.save(v);
 	}
 
-	public void  removeVehicle(String id) {
-
+	public void  removeVehicle() {
+		System.out.print("VIN of vehicle to remove: ");
+		String id = s.nextLine();
+		//File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\" + "_V_" + id + ".dat");
+		if(file.exists())
+			try {
+				file.delete();
+			} catch(SecurityException e) {
+				log.error("Unable to access file due to permissions.");
+				e.printStackTrace();
+			} 
 	}
 		
 	public void  viewVehicles() {
+		// Retrieve Vehicles
+		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		ArrayList<Vehicle> vList = new ArrayList<Vehicle>();
+		String[] fileNames = file.list();
+		vList = DealershipSystem.get(fileNames);
 
+		// List Vehicles
+		System.out.println("Make\tModel\tBid\tOffer");
+		for(Vehicle v : vList)
+			System.out.printf("%s\t%s\t%s\t%s\t%n", v.model, v.model, v.bid, v.offer);
 	}
+
+	public void  viewCustomerVehicles(Customer c) {
+		// Retrieve Vehicles
+		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		ArrayList<Vehicle> vList = new ArrayList<Vehicle>();
+		String[] fileNames = file.list();
+		vList = DealershipSystem.get(fileNames);
+
+		// List Vehicles
+		System.out.println("Make\tModel\tMonthly Payment");
+		for(Vehicle v : vList)
+			if(v.owner == c.creditCard)
+				System.out.printf("%s\t%s\t%s\t%s\t%n", v.model, v.model, v.monthlyPayment);
+		
+	}
+	
+	public void viewCarPayments(Vehicle v) {
+		System.out.println("Car Payment: $" + v.monthlyPayment);
+	}
+	
+	
 		
 }

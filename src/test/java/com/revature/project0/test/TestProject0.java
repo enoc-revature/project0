@@ -43,7 +43,7 @@ public class TestProject0 {
 	 */
 	@Test
 	public void testCheckEmployeeSaveOneFile() {
-		String dir = "src\\main\\resources\\DAOFiles\\employees\\";
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
 		String expectation = dir + "employee.dat";
 		Employee e = new Employee();
 		File file = new File(dir);
