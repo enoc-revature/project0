@@ -16,7 +16,7 @@ public class Main {
 			Employee e = new Employee();
 			//SerializationDAO.writeSerial(2);
 			//System.out.println(SerializationDAO.readSerial("test"));
-			//s.writeSerial(e);
+			s.writeSerial(e);
 			e = (Employee) s.readSerial("employee");
 			System.out.println(e.firstName);
 			System.out.println(e.lastName);

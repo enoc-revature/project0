@@ -18,12 +18,16 @@ public class SerializationDAO<T> {
 	private static Logger log = Logger.getRootLogger();
 	public void writeSerial(T t) {
 		String fileName = "";
+
 		Employee employee = null;
 		Employee e2 = new Employee();
+	
 		Customer customer = null;
 		Customer c2 = new Customer();
+
 		Vehicle vehicle = null;
 		Vehicle v2 = new Vehicle();
+
 		if(t instanceof Employee) {
 			fileName = "employee";
 			employee = (Employee) t;
@@ -40,12 +44,13 @@ public class SerializationDAO<T> {
 			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
 			System.exit(-101);
 		}
-		System.out.println("writeSerial called");
+		log.info("writeSerial called");
+
 		String locationName = "src\\main\\resources\\DAOFiles\\" + fileName + ".dat";
 		System.out.println(locationName);
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
-		System.out.println("Variables initialized");
+		log.info("Variables initialized");
 		try {
 			fos = new FileOutputStream(locationName);
 			oos = new ObjectOutputStream(fos); // This does all the heavy-lifting of serialization
@@ -57,63 +62,45 @@ public class SerializationDAO<T> {
 			} else if(t instanceof Vehicle) {
 				oos.writeObject(v2);
 			}
-				System.out.println("file steams opened and written successfully");
+			log.debug("file steams opened and written successfully");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("FileNotFoundException occurred");
+			log.error("FileNotFoundException occurred");
 			e.printStackTrace();
 		} catch(IOException e) {
-			System.out.println("IOException for opening stream and writing occurred");
+			log.error("IOException for opening stream and writing occurred");
 			e.printStackTrace();
 		} finally {
+			log.debug("Finished File Output");
 			try {
 				fos.close();
 				oos.close();
-				System.out.println("fos.close succeeded");
+				log.debug("Finished closing file-out resources.");
 			} catch(IOException e) {
-				System.out.println("IOException up fos.close() occurred");
+				log.error("IOException up fos.close() occurred");
 				e.printStackTrace();
 			}
 		}	
-		System.out.println("writeSerial FINISHED");
+		log.info("writeSerial FINISHED");
 	}
 	
 	public T readSerial(String id) {
-		//String fileName = "";
 		Employee employee = null;
 		Customer customer = null;
 		Vehicle vehicle = null;
-		/*
-		if(id == "employee") {
-			fileName = "employee";
-			//employee = (Employee) t;
-		} else if(id == "customer") {
-			fileName = "customer";
-			//customer = (Customer) t;
-		} else if(id == "vehicle") {
-			fileName = "vehicle";
-			//vehicle = (Vehicle) t;
-		} else {
-			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
-			System.exit(-102);
-		}
-		*/
+
 		if(id!="employee" && id!="customer" && id!="vehicle") {
 			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
 			System.exit(-102);
 		}
 		
-		
 		String locationName = "src\\main\\resources\\DAOFiles\\" + id + ".dat";
-		System.out.println(locationName);
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		Object o = new Object();
 		T t;
 		try {
-			System.out.println("Started try 1");
-			System.out.println("FileStream works");
-			System.out.println("InputStream works");
+			log.debug("Started try 1");
 			fis = new FileInputStream(locationName);
 			ois = new ObjectInputStream(fis); // This does all the heavy-lifting of serialization
 			if(id == "employee") {
@@ -123,7 +110,7 @@ public class SerializationDAO<T> {
 			} else if(id == "vehicle") {
 				vehicle = (Vehicle) ois.readObject();
 			}
-			System.out.println("Ended try 1");
+			log.debug("Ended try 1");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -135,16 +122,22 @@ public class SerializationDAO<T> {
 			try {
 				ois.close();
 				fis.close();
+				log.debug("Finished closing file-out resources.");
 			} catch(IOException e) {
+				log.error("IOException up fos.close() occurred");
 				e.printStackTrace();
 			}
 		}
+
 		if(id == "employee") {
 			return (T) employee;
 		} else if(id == "customer") {
 			return (T) customer;
 		} else if(id == "vehicle") {
 			return (T) vehicle;
+		} else {
+			System.out.println("ERROR: INCORRECT CLASS TYPE ON FILE. TERMINATING PROGRAM");
+			System.exit(-103);
 		}
 		return null;
 	}
