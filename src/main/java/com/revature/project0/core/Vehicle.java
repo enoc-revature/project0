@@ -18,8 +18,12 @@ public class Vehicle implements Serializable{
 	public String condition; // make enum later
 	public transient ArrayList<String> bid;
 	public transient ArrayList<String >offer;
+	public transient String highestBid;
+	public transient String lowestOffer;
 	public String vin;
 	public String owner = "Dealership";
-	public transient String monthlyPayment;
+	public String monthlyPayment;
+	public String Principle;
+	public String paymentDuration; // in months
 	public boolean pended;
 }

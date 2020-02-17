@@ -18,7 +18,9 @@ import com.revature.project0.core.Vehicle;
 public class SerializationDAO<T> {
 	private static Logger log = Logger.getRootLogger();
 	//private final String directoryName = "src\\main\\resources\\DAOFiles\\";
+
 	public void writeSerial(T t) {
+		log.debug("writeSerial() called");
 		String fileName = "";
 
 		Employee employee = null;
@@ -35,17 +37,17 @@ public class SerializationDAO<T> {
 			employee = (Employee) t;
 			e2 = employee;
 			fileName = "_E_" + e2.id + ".dat";
-			locationName = DealershipSystem.DIRECTORYNAME + "employees\\" + fileName + ".dat";
+			locationName = DealershipSystem.DIRECTORYNAME + "employees\\" + fileName;
 		} else if(t instanceof Customer) {
 			customer = (Customer) t;
 			c2 = customer;
 			fileName = "_C_" + c2.creditCard + ".dat";
-			locationName = DealershipSystem.DIRECTORYNAME + "customers\\" + fileName + ".dat";
+			locationName = DealershipSystem.DIRECTORYNAME + "customers\\" + fileName;
 		} else if(t instanceof Vehicle) {
 			vehicle = (Vehicle) t;
 			v2 = vehicle;
 			fileName = "_V_" + v2.vin + ".dat";
-			locationName = DealershipSystem.DIRECTORYNAME + "vehicles\\" + fileName + ".dat";
+			locationName = DealershipSystem.DIRECTORYNAME + "vehicles\\" + fileName;
 		} else {
 			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
 			System.exit(-101);
@@ -166,4 +168,7 @@ public class SerializationDAO<T> {
 		}
 		return null;
 	}
+	/*
+	public boolean checkCredentials(String id, String pw) 
+	*/
 }

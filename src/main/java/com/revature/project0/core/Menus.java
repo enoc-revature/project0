@@ -11,6 +11,19 @@ public class Menus {
 	private static Logger log = Logger.getRootLogger();
 	Scanner s = new Scanner(System.in);
 
+	public void employeeLogin() {
+		System.out.print("Employee ID: ");
+		String id = s.nextLine();
+		System.out.print("Password: ");
+		String pw = s.nextLine();
+		
+		
+	}
+
+	public void customerLogin() {
+		
+	}
+
 	public void employeeMenu() {
 		System.out.println("What would you like to do?");
 		System.out.print("A) Add a vehicle\nB) Remove a vehicle\nC)View vehicles in the lot.\n");

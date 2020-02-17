@@ -11,18 +11,37 @@ public  class DealershipSystem<T> {
 	// DealershipSystem is simply a collection of methods.
 	private static Logger log = Logger.getRootLogger();
 	public final static String DIRECTORYNAME = "src\\main\\resources\\DAOFiles\\";
-	public static double calculatePayments(String vin){
-		
-		return 0.0;
+	public final static double INTEREST = 0.05;
+	public static double calculatePayments(String principle, String duration){
+		double p = Double.parseDouble(principle);
+		double d = Double.parseDouble(duration);
+		double totalInterest = d*DealershipSystem.INTEREST;
+		double totalWithInterest = p*totalInterest;
+		return totalWithInterest/d;
+	}
+	
+	public static boolean checkEmployeeCredentials(String id, String pw) {
+		SerializationDAO dao = new SerializationDAO();
+		Employee emp = (Employee) dao.readSerial(id);
+		return pw == emp.passWord;
+	}
+
+	public static boolean checkCustomerCredentials(String id, String pw) {
+		SerializationDAO dao = new SerializationDAO();
+		Customer cus = (Customer) dao.readSerial(id);
+		return pw == cus.passWord;
 	}
 	
 	public static void save(Object o) {
 		log.debug("System static save(Object) called");
+		SerializationDAO dao = new SerializationDAO();
+		dao.writeSerial(o);
 	}
 
-	public static Object get(String id) {
+	public static Vehicle getVehicle(String id) {
 		log.debug("System static get(String) called");
-		return new Object();
+		SerializationDAO dao = new SerializationDAO();
+		return (Vehicle) dao.readSerial(id);
 	}
 
 	public static ArrayList<Vehicle> get(String[] idList) {

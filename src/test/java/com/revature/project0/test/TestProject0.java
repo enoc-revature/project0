@@ -44,17 +44,62 @@ public class TestProject0 {
 	@Test
 	public void testCheckEmployeeSaveOneFile() {
 		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
-		String expectation = dir + "employee.dat";
+		SerializationDAO dao = new SerializationDAO();
+
 		Employee e = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "d";
+		e.passWord = "pass";
+		dao.writeSerial(e);
+
+		String expectation = "_E_d.dat";
+		File folder = new File(dir);
+    	String[] name = file.list();
+    	String fileName = file.getPath()+file.getName();
+    	//assertEquals(expectation, fileName);
+    	//assertEquals(expectation, folder[0]);
+    	assertEquals(expectation, name[1]);
+	}
+
+	@Test
+	public void testCheckCustomerSaveOneFile() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		SerializationDAO dao = new SerializationDAO();
+
+		Customer e = new Customer();
+		e.firstName = "a";
+		e.lastName = "b";
+		//e.id = "d";
+		e.passWord = "pass";
+		dao.writeSerial(e);
+
+		String expectation = dir + "_V_d.dat";
 		File file = new File(dir);
-		SerializationDAO s = new SerializationDAO();
-		s.writeSerial(e);
-		
-    	File[] folder = file.listFiles();
-    	assertEquals(expectation, folder[0].toString());
+    	String[] folder = file.list();
+    	assertEquals(expectation, folder[0]);
+	}
+
+	@Test
+	public void testCheckVehicleSaveOneFile() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		SerializationDAO dao = new SerializationDAO();
+
+		Employee e = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "d";
+		e.passWord = "pass";
+		dao.writeSerial(e);
+
+		String expectation = dir + "_V_d.dat";
+		File file = new File(dir);
+    	String[] folder = file.list();
+    	assertEquals(expectation, folder[0]);
 	}
 	// ---------------------------------
 	
+			
 	
 	
 	/* ######### DealershipSystem Class #########
