@@ -18,6 +18,7 @@ public class Main {
 		//String relativePath = "..\\..\\OneDrive\\Documents\\eclipse-workspace\\project0\\src\\main\\resources\\log4j.properties";
 		//PropertyConfigurator.configure(relativePath);
 		//PropertyConfigurator.configure("src/main/resources/log4j.properties");
+		//PropertyConfigurator.configure(".");
 		//PropertyConfigurator.configure("C:\\Users\\enocs\\OneDrive\\Documents\\eclipse-workspace\\project0\\src\\main\\resources\\log4j.properties");
 		//PropertyConfigurator.configure("C:/Users/enocs/OneDrive/Documents/eclipse-workspace/project0/src/main/resources/log4j.properties");
 		//PropertyConfigurator.configure("src\\main\\resources\\log4j.properties");

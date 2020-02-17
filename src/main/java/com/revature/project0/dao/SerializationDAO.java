@@ -36,17 +36,17 @@ public class SerializationDAO<T> {
 		if(t instanceof Employee) {
 			employee = (Employee) t;
 			e2 = employee;
-			fileName = "_E_" + e2.id + ".dat";
+			fileName =  "_" + e2.id + ".dat";
 			locationName = DealershipSystem.DIRECTORYNAME + "employees\\" + fileName;
 		} else if(t instanceof Customer) {
 			customer = (Customer) t;
 			c2 = customer;
-			fileName = "_C_" + c2.creditCard + ".dat";
+			fileName = "_" + c2.creditCard + ".dat";
 			locationName = DealershipSystem.DIRECTORYNAME + "customers\\" + fileName;
 		} else if(t instanceof Vehicle) {
 			vehicle = (Vehicle) t;
 			v2 = vehicle;
-			fileName = "_V_" + v2.vin + ".dat";
+			fileName = "_" + v2.vin + ".dat";
 			locationName = DealershipSystem.DIRECTORYNAME + "vehicles\\" + fileName;
 		} else {
 			System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
@@ -89,7 +89,7 @@ public class SerializationDAO<T> {
 		log.info("writeSerial FINISHED");
 	}
 	
-	public T readSerial(String id) {
+	public T readSerial(String id, char type) {
 		Employee employee = null;
 		Customer customer = null;
 		Vehicle vehicle = null;
@@ -98,16 +98,16 @@ public class SerializationDAO<T> {
 		if(id!="employee" && id!="customer" && id!="vehicle") {
 		}
 		*/
-		
-		char pathOption = id.charAt(1);
+		log.debug("Emp ID="+id);
+		char pathOption = type;
 		String locationName = "";
-		locationName = DealershipSystem.DIRECTORYNAME + id + "s\\" + id + ".dat";
+		//locationName = DealershipSystem.DIRECTORYNAME + id + "s\\" + id + ".dat";
 		switch(pathOption) {
-		case 'E' : locationName = DealershipSystem.DIRECTORYNAME + "employees\\" + id + ".dat";;
+		case 'E' : locationName = DealershipSystem.DIRECTORYNAME + "employees\\_" + id + ".dat";;
 					break;
-		case 'C' : locationName = DealershipSystem.DIRECTORYNAME + "customers\\" + id + ".dat";;
+		case 'C' : locationName = DealershipSystem.DIRECTORYNAME + "customers\\_" + id + ".dat";;
 					break;
-		case 'V' : locationName = DealershipSystem.DIRECTORYNAME + "vehicless\\" + id + ".dat";;
+		case 'V' : locationName = DealershipSystem.DIRECTORYNAME + "vehicles\\_" + id + ".dat";;
 					break;
 		default: System.out.println("ERROR: ILLEGAL CLASS. TERMINATING PROGRAM.");
 				 System.exit(-102);
@@ -118,6 +118,7 @@ public class SerializationDAO<T> {
 		ObjectInputStream ois = null;
 		Object o = new Object();
 		T t;
+		log.debug("locationName=" + locationName);
 		try {
 			log.debug("Started try 1");
 			fis = new FileInputStream(locationName);
@@ -156,11 +157,12 @@ public class SerializationDAO<T> {
 			}
 		}
 
-		if(id == "employee") {
+		log.debug("Inferred ID="+id);
+		if(type == 'E') {
 			return (T) employee;
-		} else if(id == "customer") {
+		} else if(type == 'C') {
 			return (T) customer;
-		} else if(id == "vehicle") {
+		} else if(type == 'V') {
 			return (T) vehicle;
 		} else {
 			System.out.println("ERROR: INCORRECT CLASS TYPE ON FILE. TERMINATING PROGRAM");
@@ -168,6 +170,7 @@ public class SerializationDAO<T> {
 		}
 		return null;
 	}
+
 	/*
 	public boolean checkCredentials(String id, String pw) 
 	*/

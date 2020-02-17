@@ -12,6 +12,7 @@ public  class DealershipSystem<T> {
 	private static Logger log = Logger.getRootLogger();
 	public final static String DIRECTORYNAME = "src\\main\\resources\\DAOFiles\\";
 	public final static double INTEREST = 0.05;
+
 	public static double calculatePayments(String principle, String duration){
 		double p = Double.parseDouble(principle);
 		double d = Double.parseDouble(duration);
@@ -22,14 +23,18 @@ public  class DealershipSystem<T> {
 	
 	public static boolean checkEmployeeCredentials(String id, String pw) {
 		SerializationDAO dao = new SerializationDAO();
-		Employee emp = (Employee) dao.readSerial(id);
-		return pw == emp.passWord;
+		Employee emp = (Employee) dao.readSerial(id,'E');
+		//log.debug("pw input: "+pw);
+		//log.debug("pw file: " + emp.password);
+		return pw.equals(emp.password);
 	}
 
 	public static boolean checkCustomerCredentials(String id, String pw) {
 		SerializationDAO dao = new SerializationDAO();
-		Customer cus = (Customer) dao.readSerial(id);
-		return pw == cus.passWord;
+		Customer cus = (Customer) dao.readSerial(id,'C');
+		//log.debug("pw input: "+pw);
+		//log.debug("pw file: " + emp.password);
+		return pw.equals(cus.password);
 	}
 	
 	public static void save(Object o) {
@@ -38,15 +43,27 @@ public  class DealershipSystem<T> {
 		dao.writeSerial(o);
 	}
 
+	public static Employee getEmployee(String id) {
+		log.debug("System static get(String) called");
+		SerializationDAO dao = new SerializationDAO();
+		return (Employee) dao.readSerial(id, 'E');
+	}
+
+	public static Customer getCustomer(String id) {
+		log.debug("System static get(String) called");
+		SerializationDAO dao = new SerializationDAO();
+		return (Customer) dao.readSerial(id, 'C');
+	}
+
 	public static Vehicle getVehicle(String id) {
 		log.debug("System static get(String) called");
 		SerializationDAO dao = new SerializationDAO();
-		return (Vehicle) dao.readSerial(id);
+		return (Vehicle) dao.readSerial(id, 'V');
 	}
 
-	public static ArrayList<Vehicle> get(String[] idList) {
+	public static ArrayList<Vehicle> getVehicles(String[] idList) {
 	//public static ArrayList<Object> get(String[] idList) {
-		log.debug("System static get(String[]) called");
+		log.debug("System static viewVehicles(String[]) called");
 		ArrayList<Vehicle> vList = new ArrayList<Vehicle>();
 		/*
 		ArrayList<Object> oList = new ArrayList<Object>();
@@ -72,8 +89,12 @@ public  class DealershipSystem<T> {
 		}
 		*/
 		for(String id : idList) 
-			vList.add((Vehicle) dao.readSerial("_V"));
+			vList.add((Vehicle) dao.readSerial(id, 'V'));
 		return vList;
+	}
+	
+	public static void viewVehicles(ArrayList<Vehicle> vList) {
+		
 	}
 
 }

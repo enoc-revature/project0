@@ -4,6 +4,8 @@ package com.revature.project0.test;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 import org.apache.log4j.BasicConfigurator;
 import org.junit.After;
@@ -21,6 +23,7 @@ public class TestProject0 {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		BasicConfigurator.configure();
 	}
 
 	@AfterClass
@@ -42,60 +45,211 @@ public class TestProject0 {
 	 * 
 	 */
 	@Test
-	public void testCheckEmployeeSaveOneFile() {
+	public void testCheckEmployeeWriteSerial() {
 		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		Scanner s = new Scanner(System.in);
 		SerializationDAO dao = new SerializationDAO();
 
 		Employee e = new Employee();
 		e.firstName = "a";
 		e.lastName = "b";
 		e.id = "d";
-		e.passWord = "pass";
-		dao.writeSerial(e);
+		e.password = "pass";
 
-		String expectation = "_E_d.dat";
-		File folder = new File(dir);
-    	String[] name = file.list();
-    	String fileName = file.getPath()+file.getName();
-    	//assertEquals(expectation, fileName);
-    	//assertEquals(expectation, folder[0]);
-    	assertEquals(expectation, name[1]);
+		//String expectation = dir+ e.id + ".dat";
+		String fileName = dir+ "_" + e.id + ".dat";
+		File file = new File(fileName);
+		if(file.exists()) // Kill file before dao writes it
+			file.delete();
+		s.nextInt(); // Check that file is not in folder
+		dao.writeSerial(e);
+    	//System.out.println(file.getPath());
+    	//System.out.println(expectation);
+    	//System.out.println(fileName);
+    	assertEquals(fileName, file.getPath());
+		s.nextInt(); // Check that file is in folder
+		if(file.exists()) // Kill file because it's not part of the program
+			file.delete();
 	}
 
 	@Test
-	public void testCheckCustomerSaveOneFile() {
-		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+	public void testCheckCustomerWriteSerial() {
+		String dir = DealershipSystem.DIRECTORYNAME + "customers\\";
+		Scanner s = new Scanner(System.in);
 		SerializationDAO dao = new SerializationDAO();
 
-		Customer e = new Customer();
-		e.firstName = "a";
-		e.lastName = "b";
-		//e.id = "d";
-		e.passWord = "pass";
-		dao.writeSerial(e);
+		Customer c = new Customer();
+		c.firstName = "a";
+		c.lastName = "b";
+		c.creditCard = "d";
+		c.password = "pass";
 
-		String expectation = dir + "_V_d.dat";
-		File file = new File(dir);
-    	String[] folder = file.list();
-    	assertEquals(expectation, folder[0]);
+		//String expectation = dir + c.creditCard + ".dat";
+		String fileName = dir + "_" + c.creditCard + ".dat";
+		File file = new File(fileName);
+		if(file.exists()) // Kill file before dao writes it
+			file.delete();
+		s.nextInt(); // Check that file is not in folder
+		dao.writeSerial(c);
+    	//System.out.println(file.getPath());
+    	//System.out.println(expectation);
+    	assertEquals(fileName, file.getPath());
+		s.nextInt(); // Check that file is in folder
+		if(file.exists()) // Kill file because it's not part of the program
+			file.delete();
 	}
 
 	@Test
-	public void testCheckVehicleSaveOneFile() {
+	public void testCheckVehicleWriteSerial() {
+		String dir = DealershipSystem.DIRECTORYNAME + "vehicles\\";
+		Scanner s = new Scanner(System.in);
+		SerializationDAO dao = new SerializationDAO();
+
+		Vehicle v = new Vehicle();
+		v.make = "a";
+		v.model = "b";
+		v.vin = "d123";
+		v.principle = "123";
+
+		//String expectation = dir+"_V_" + v.vin + ".dat";
+		String fileName = dir+"_" + v.vin + ".dat";
+		File file = new File(fileName);
+		if(file.exists()) // Kill file before dao writes it
+			file.delete();
+		s.nextInt(); // Check that file is not in folder
+		dao.writeSerial(v);
+    	//System.out.println(file.getPath());
+    	//System.out.println(expectation);
+    	assertEquals(fileName, file.getPath());
+		s.nextInt(); // Check that file is in folder
+		if(file.exists()) // Kill file because it's not part of the program
+			file.delete();
+	}
+	
+	@Test
+	public void testCheckEmployeeReadSerial_Without_Transient() {
 		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		Scanner s = new Scanner(System.in);
 		SerializationDAO dao = new SerializationDAO();
 
 		Employee e = new Employee();
+		Employee eReturned = new Employee();
 		e.firstName = "a";
 		e.lastName = "b";
-		e.id = "d";
-		e.passWord = "pass";
-		dao.writeSerial(e);
+		e.id = "123";
+		e.password = "pass";
+		String[] expectation = {e.firstName, e.lastName};
+		//System.out.println(e.firstName);
+		//System.out.println(e.lastName);
 
-		String expectation = dir + "_V_d.dat";
-		File file = new File(dir);
-    	String[] folder = file.list();
-    	assertEquals(expectation, folder[0]);
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		//String fileLocation = dir+ e.id + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		dao.writeSerial(e);
+		//System.out.println("###Before dao.readSerial");
+		eReturned = (Employee) dao.readSerial(e.id, 'E');
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(eReturned.firstName);
+		//System.out.println(eReturned.lastName);
+		String[] result = {eReturned.firstName, eReturned.lastName};
+
+    	assertArrayEquals(expectation, result);
+	}
+	
+	//@Test //Not finished
+	public void testCheckEmployeeReadSerial_With_Transient() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		Scanner s = new Scanner(System.in);
+		SerializationDAO dao = new SerializationDAO();
+
+		Employee e = new Employee();
+		Employee eReturned = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "_E_123";
+		e.password = "pass";
+		String[] expectation = {e.firstName, e.lastName, e.id, e.password};
+		System.out.println(e.firstName);
+		System.out.println(e.lastName);
+		System.out.println(e.id);
+		System.out.println(e.password);
+
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		String fileLocation = dir+ e.id + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		dao.writeSerial(e);
+		//System.out.println("###Before dao.readSerial");
+		eReturned = (Employee) dao.readSerial(e.id, 'E');
+		//System.out.println("###After dao.readSerial");
+		System.out.println(eReturned.firstName);
+		System.out.println(eReturned.lastName);
+		System.out.println(eReturned.id);
+		System.out.println(eReturned.password);
+		String[] result = {eReturned.firstName, eReturned.lastName, eReturned.id, eReturned.password};
+
+    	assertArrayEquals(expectation, result);
+	}
+
+	@Test
+	public void testCheckCustomerReadSerial_Without_Transient() {
+		String dir = DealershipSystem.DIRECTORYNAME + "customers\\";
+		Scanner s = new Scanner(System.in);
+		SerializationDAO dao = new SerializationDAO();
+
+		Customer c = new Customer();
+		Customer cReturned = new Customer();
+		c.firstName = "a";
+		c.lastName = "b";
+		c.creditCard = "123";
+		String[] expectation = {c.firstName, c.lastName};
+		//System.out.println(e.firstName);
+		//System.out.println(e.lastName);
+
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		String fileLocation = dir+ c.creditCard + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		dao.writeSerial(c);
+		//System.out.println("###Before dao.readSerial");
+		cReturned = (Customer) dao.readSerial(c.creditCard, 'C');
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(eReturned.firstName);
+		//System.out.println(eReturned.lastName);
+		String[] result = {cReturned.firstName, cReturned.lastName};
+
+	   	assertArrayEquals(expectation, result);
+	}
+
+	@Test
+	public void testCheckVehicleReadSerial_Without_Transient() {
+		String dir = DealershipSystem.DIRECTORYNAME + "vehicles\\";
+		Scanner s = new Scanner(System.in);
+		SerializationDAO dao = new SerializationDAO();
+
+		Vehicle v = new Vehicle();
+		Vehicle vReturned = new Vehicle();
+		v.make = "a";
+		v.model = "b";
+		v.vin = "123";
+		String[] expectation = {v.make, v.model};
+		//System.out.println(v.make);
+		//System.out.println(v.model);
+
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		String fileLocation = dir+ v.vin + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		dao.writeSerial(v);
+		//System.out.println("###Before dao.readSerial");
+		vReturned = (Vehicle) dao.readSerial(v.vin, 'V');
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(vReturned.firstName);
+		//System.out.println(vReturned.lastName);
+		String[] result = {vReturned.make, vReturned.model};
+
+    	assertArrayEquals(expectation, result);
 	}
 	// ---------------------------------
 	
@@ -106,8 +260,240 @@ public class TestProject0 {
 	 * 
 	 */
 	@Test
-	public void test1() {
-		fail("Not yet implemented.");
+	public void testDealershipEmployeeSave() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		Scanner s = new Scanner(System.in);
+
+		Employee e = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "d";
+		e.password = "pass";
+
+		String expectation = dir+"_d.dat";
+		String fileName = dir+"d.dat";
+		File file = new File(expectation);
+		if(file.exists()) // Kill file before dao writes it
+			file.delete();
+		//s.nextInt(); // Check that file is not in folder
+		DealershipSystem.save(e);
+    	//System.out.println(file.getPath());
+    	//System.out.println(expectation);
+    	//System.out.println(fileName);
+    	assertEquals(expectation, file.getPath());
+		//s.nextInt(); // Check that file is in folder
+		if(file.exists()) // Kill file because it's not part of the program
+			file.delete();
+	}
+
+	@Test
+	public void testDealershipCustomerSave() {
+		String dir = DealershipSystem.DIRECTORYNAME + "customers\\";
+		Scanner s = new Scanner(System.in);
+
+		Customer c = new Customer();
+		c.firstName = "a";
+		c.lastName = "b";
+		c.creditCard = "d";
+		c.password = "pass";
+
+		String expectation = dir+"_d.dat";
+		String fileName = dir+"d.dat";
+		File file = new File(expectation);
+		if(file.exists()) // Kill file before dao writes it
+			file.delete();
+		//s.nextInt(); // Check that file is not in folder
+		DealershipSystem.save(c);
+    	//System.out.println(file.getPath());
+    	//System.out.println(expectation);
+    	assertEquals(expectation, file.getPath());
+		//s.nextInt(); // Check that file is in folder
+		if(file.exists()) // Kill file because it's not part of the program
+			file.delete();
+	}
+
+	@Test
+	public void testDealershipVehicleSave() {
+		Scanner s = new Scanner(System.in);
+		String dir = DealershipSystem.DIRECTORYNAME + "vehicles\\";
+
+		Vehicle v = new Vehicle();
+		v.make = "a";
+		v.model = "b";
+		v.vin = "d123";
+		v.principle = "123";
+		
+		String expectation = dir+"_d.dat";
+		String fileName = dir+"d.dat";
+		File file = new File(expectation);
+		if(file.exists()) // Kill file before dao writes it
+			file.delete();
+		//s.nextInt(); // Check that file is not in folder
+		DealershipSystem.save(v);
+		//System.out.println(file.getPath());
+		//System.out.println(expectation);
+		assertEquals(expectation, file.getPath());
+		//s.nextInt(); // Check that file is in folder
+		if(file.exists()) // Kill file because it's not part of the program
+			file.delete();
+	}
+	
+	@Test
+	public void DealershipGetEmployee() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		//Scanner s = new Scanner(System.in);
+
+		Employee e = new Employee();
+		Employee eReturned = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "123";
+		String[] expectation = {e.firstName, e.lastName, e.id};
+		//System.out.println(e.firstName);
+		//System.out.println(e.lastName);
+		//System.out.println(e.id);
+		//System.out.println(e.password);
+
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		String fileLocation = dir+ e.id + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		DealershipSystem.save(e);
+		//System.out.println("###Before dao.readSerial");
+		eReturned = DealershipSystem.getEmployee(e.id);
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(eReturned.firstName);
+		//System.out.println(eReturned.lastName);
+		//System.out.println(eReturned.id);
+		//System.out.println(eReturned.password);
+		String[] result = {eReturned.firstName, eReturned.lastName, eReturned.id};
+
+    	assertArrayEquals(expectation, result);
+	}
+
+	@Test
+	public void DealershipGetCustomer() {
+		String dir = DealershipSystem.DIRECTORYNAME + "Customers\\";
+		//Scanner s = new Scanner(System.in);
+
+		Customer c = new Customer();
+		Customer cReturned = new Customer();
+		c.firstName = "a";
+		c.lastName = "b";
+		c.creditCard = "123";
+		String[] expectation = {c.firstName, c.lastName, c.creditCard};
+		//System.out.println(c.firstName);
+		//System.out.println(c.lastName);
+		//System.out.println(c.creditCard);
+		//System.out.println(c.password);
+
+		//String fileLocation = dir+"_E_" + c.creditCard + ".dat";
+		String fileLocation = dir+ c.creditCard + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		DealershipSystem.save(c);
+		//System.out.println("###Before dao.readSerial");
+		cReturned = DealershipSystem.getCustomer(c.creditCard);
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(cReturned.firstName);
+		//System.out.println(cReturned.lastName);
+		//System.out.println(cReturned.creditCard);
+		//System.out.println(cReturned.password);
+		String[] result = {cReturned.firstName, cReturned.lastName, cReturned.creditCard};
+
+    	assertArrayEquals(expectation, result);
+	}
+	
+	@Test
+	public void DealershipCheckEmployeeCredentialsTrue() {
+		Employee e = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "123";
+		e.password = "abc";
+
+		DealershipSystem.save(e);
+		
+		assertEquals(true, DealershipSystem.checkEmployeeCredentials(e.id, e.password));
+		
+	}
+
+	@Test
+	public void DealershipCheckEmployeeCredentialsFalse() {
+		Employee e = new Employee();
+		e.firstName = "a";
+		e.lastName = "b";
+		e.id = "123";
+		e.password = "abc";
+
+		DealershipSystem.save(e);
+		
+		assertEquals(false, DealershipSystem.checkEmployeeCredentials(e.id, e.password+"N"));
+		
+	}
+
+	@Test
+	public void DealershipCheckCustomerCredentialsTrue() {
+		Customer c = new Customer();
+		c.firstName = "a";
+		c.lastName = "b";
+		c.creditCard = "123";
+		c.password = "abc";
+
+		DealershipSystem.save(c);
+		
+		assertEquals(true, DealershipSystem.checkEmployeeCredentials(c.creditCard, c.password));	
+	}
+
+	@Test
+	public void DealershipCheckCustomerCredentialsFalse() {
+		Customer c = new Customer();
+		c.firstName = "a";
+		c.lastName = "b";
+		c.creditCard = "123";
+		c.password = "abc";
+
+		DealershipSystem.save(c);
+		
+		assertEquals(false, DealershipSystem.checkEmployeeCredentials(c.creditCard, c.password+"N"));	
+	}
+
+	//@Test //Not finished
+	public void DealershipGetVehicle() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		//Scanner s = new Scanner(System.in);
+
+		Vehicle v = new Vehicle();
+		Vehicle vReturned = new Vehicle();
+		v.make = "a";
+		v.model = "b";
+		v.vin = "_V_123";
+		String[] expectation = {v.make, v.model, v.vin};
+		//System.out.println(e.firstName);
+		//System.out.println(e.lastName);
+		//System.out.println(e.id);
+		//System.out.println(e.password);
+
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		String fileLocation = dir+ v.vin + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		DealershipSystem.save(v);
+		//System.out.println("###Before dao.readSerial");
+		vReturned = DealershipSystem.getVehicle(v.vin);
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(eReturned.firstName);
+		//System.out.println(eReturned.lastName);
+		//System.out.println(eReturned.id);
+		//System.out.println(eReturned.password);
+		String[] result = {vReturned.make, vReturned.model, vReturned.vin};
+
+    	assertArrayEquals(expectation, result);
+	}
+	//public static ArrayList<Vehicle> get(String[] idList) {
+	@Test
+	public void DealershipViewVehicles() {
+		
 	}
 	// ---------------------------------
 

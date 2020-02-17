@@ -136,9 +136,9 @@ public class Menus {
 	public void  viewVehicles() {
 		// Retrieve Vehicles
 		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
-		ArrayList<Vehicle> vList = new ArrayList<Vehicle>();
-		String[] fileNames = file.list();
-		vList = DealershipSystem.get(fileNames);
+		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(file.list());
+		//String[] fileNames = file.list();
+		//vList = DealershipSystem.getVehicle(fileNames);
 
 		// List Vehicles
 		System.out.println("Make\tModel\tBid\tOffer");
@@ -151,7 +151,7 @@ public class Menus {
 		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
 		ArrayList<Vehicle> vList = new ArrayList<Vehicle>();
 		String[] fileNames = file.list();
-		vList = DealershipSystem.get(fileNames);
+		//vList = DealershipSystem.get(fileNames);
 
 		// List Vehicles
 		System.out.println("Make\tModel\tMonthly Payment");
