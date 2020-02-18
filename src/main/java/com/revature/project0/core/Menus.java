@@ -203,7 +203,7 @@ public class Menus {
 		for(Vehicle v : vList) {
 			if(v.pended) 
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, "-", "-", v.highestOffer, v.vin, v.pended);
+						v.model, v.model, "-", "-", v.principle, v.vin, v.pended);
 			else
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
 						v.model, v.model, v.bid, v.highestOffer, "-", v.vin, v.pended);
@@ -223,7 +223,7 @@ public class Menus {
 		System.out.println("Make\tModel\tVIN\tOwner\tPrinciple\tPayments");
 		for(Vehicle v : vList) {
 			if(v.pended) {
-				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t\t%s%n",
 						v.model, v.model, v.vin, v.highestBidderOrOwner, "$"+v.principle, "$"+v.monthlyPayment);
 			}
 		}
@@ -287,7 +287,7 @@ public class Menus {
 		String input = "";
 		char option;
 		while(!leaveMenu) {
-			System.out.print("Would you like to accept/reject an offer(y/n): ");
+			System.out.print("Would you like to accept an offer(y/n): ");
 			input = s.nextLine();
 			if(input.length()==0)
 				continue;
@@ -324,11 +324,11 @@ public class Menus {
 		//vList = DealershipSystem.getVehicle(fileNames);
 
 		// List Vehicles
-		System.out.println("Make\tModel\tBid\tOffer\tVIN\tPended");
+		System.out.println("Make\tModel\tVIN\tPrinciple\tPayments");
 		for(Vehicle v : vList) {
-			if(!v.pended && c.creditCard.contentEquals(v.highestBidderOrOwner))
-				System.out.printf("%s\t%s\t%s\t%s%n",
-						v.model, v.model, v.vin, v.monthlyPayment);
+			if(v.pended && c.creditCard.contentEquals(v.highestBidderOrOwner))
+				System.out.printf("%s\t%s\t%s\t%s\t\t%s%n",
+						v.make, v.model, v.vin, "$"+v.principle, "$"+v.monthlyPayment);
 		}
 	}
 
@@ -438,13 +438,16 @@ public class Menus {
 		while(!leaveMenu) {
 			Scanner s = new Scanner(System.in);
 			log.debug("Still in while loop.");
-			System.out.println("Make\tModel\tBid\tOffer\tVIN");
+			System.out.println("Make\tModel\tYear\tBid\tOffer\tVIN");
 			ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
 			log.debug("folder.list()[0]=" + folder.list()[0]);
 			for(Vehicle vIter : vList) {
 				if(!vIter.pended) {
-			System.out.printf("%s\t%s\t%s\t%s\t%s%n",
-							vIter.model, vIter.model, vIter.bid, vIter.highestOffer, vIter.vin);;
+					System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
+							vIter.model, vIter.model, vIter.year, vIter.bid, vIter.highestOffer, vIter.vin, vIter.pended);;
+				} else {
+					System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
+							vIter.model, vIter.model, vIter.year, "-", "-", vIter.vin, vIter.pended);;
 				}
 			}
 			System.out.print("Would you like to make an offer(y/n)? ");

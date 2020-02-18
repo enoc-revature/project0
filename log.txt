@@ -677,3 +677,1022 @@
 2020-02-18 14:17:59 DEBUG root:166 - Inferred ID=asd
 2020-02-18 14:17:59 DEBUG root:87 - readSerial() returned Vehicle.
 2020-02-18 14:17:59 DEBUG root:464 - After getVehicle()
+2020-02-18 14:18:58 DEBUG root:40 - DealershipSystem.checkCustomerCredentials(String id, String pw)
+2020-02-18 14:18:58 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:18:58 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:18:58 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:18:58 DEBUG root:127 - Started try 1
+2020-02-18 14:18:58 DEBUG root:146 - Ended try 1
+2020-02-18 14:18:58 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:18:58 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:18:58 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:18:58 DEBUG root:45 - pw input: def
+2020-02-18 14:18:58 DEBUG root:46 - pw file: def
+2020-02-18 14:18:58 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:18:58 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:18:58 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:18:58 DEBUG root:127 - Started try 1
+2020-02-18 14:18:58 DEBUG root:146 - Ended try 1
+2020-02-18 14:18:58 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:18:58 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:18:58 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:21:17 DEBUG root:426 - makeOffers()
+2020-02-18 14:21:17 DEBUG root:440 - Still in while loop.
+2020-02-18 14:21:17 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:21:17 DEBUG root:127 - Before vList.add
+2020-02-18 14:21:17 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:21:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:21:17 DEBUG root:127 - Started try 1
+2020-02-18 14:21:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:17 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:21:17 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:21:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:21:17 DEBUG root:127 - Started try 1
+2020-02-18 14:21:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:17 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:21:17 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:21:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:21:17 DEBUG root:127 - Started try 1
+2020-02-18 14:21:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:17 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:21:17 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:21:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:21:17 DEBUG root:127 - Started try 1
+2020-02-18 14:21:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:17 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:21:17 DEBUG root:131 - END
+2020-02-18 14:21:17 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:21:22 DEBUG root:459 - vin=asd
+2020-02-18 14:21:23 DEBUG root:83 - DealershipSystem.getVehicle(String id)
+2020-02-18 14:21:23 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:21:23 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:21:23 DEBUG root:127 - Started try 1
+2020-02-18 14:21:23 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:23 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:23 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:21:23 DEBUG root:87 - readSerial() returned Vehicle.
+2020-02-18 14:21:23 DEBUG root:464 - After getVehicle()
+2020-02-18 14:21:23 DEBUG root:51 - DealershipSystem.save(Object o)
+2020-02-18 14:21:23 DEBUG root:24 - writeSerial() called
+2020-02-18 14:21:23 INFO  root:56 - writeSerial called
+2020-02-18 14:21:23 INFO  root:61 - Variables initialized
+2020-02-18 14:21:23 DEBUG root:72 - file steams opened and written successfully
+2020-02-18 14:21:23 DEBUG root:80 - Finished File Output
+2020-02-18 14:21:23 DEBUG root:84 - Finished closing file-out resources.
+2020-02-18 14:21:23 INFO  root:90 - writeSerial FINISHED
+2020-02-18 14:21:23 DEBUG root:440 - Still in while loop.
+2020-02-18 14:21:23 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:21:23 DEBUG root:127 - Before vList.add
+2020-02-18 14:21:23 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:21:23 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:21:23 DEBUG root:127 - Started try 1
+2020-02-18 14:21:23 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:23 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:23 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:21:23 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:21:23 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:21:23 DEBUG root:127 - Started try 1
+2020-02-18 14:21:23 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:23 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:23 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:21:23 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:21:23 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:21:23 DEBUG root:127 - Started try 1
+2020-02-18 14:21:23 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:23 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:23 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:21:23 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:21:23 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:21:23 DEBUG root:127 - Started try 1
+2020-02-18 14:21:23 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:23 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:23 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:21:23 DEBUG root:131 - END
+2020-02-18 14:21:23 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:21:34 DEBUG root:459 - vin=qwe
+2020-02-18 14:21:38 DEBUG root:83 - DealershipSystem.getVehicle(String id)
+2020-02-18 14:21:38 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:21:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:21:38 DEBUG root:127 - Started try 1
+2020-02-18 14:21:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:38 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:21:38 DEBUG root:87 - readSerial() returned Vehicle.
+2020-02-18 14:21:38 DEBUG root:464 - After getVehicle()
+2020-02-18 14:21:38 DEBUG root:51 - DealershipSystem.save(Object o)
+2020-02-18 14:21:38 DEBUG root:24 - writeSerial() called
+2020-02-18 14:21:38 INFO  root:56 - writeSerial called
+2020-02-18 14:21:38 INFO  root:61 - Variables initialized
+2020-02-18 14:21:38 DEBUG root:72 - file steams opened and written successfully
+2020-02-18 14:21:38 DEBUG root:80 - Finished File Output
+2020-02-18 14:21:38 DEBUG root:84 - Finished closing file-out resources.
+2020-02-18 14:21:38 INFO  root:90 - writeSerial FINISHED
+2020-02-18 14:21:38 DEBUG root:440 - Still in while loop.
+2020-02-18 14:21:38 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:21:38 DEBUG root:127 - Before vList.add
+2020-02-18 14:21:38 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:21:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:21:38 DEBUG root:127 - Started try 1
+2020-02-18 14:21:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:38 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:21:38 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:21:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:21:38 DEBUG root:127 - Started try 1
+2020-02-18 14:21:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:38 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:21:38 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:21:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:21:38 DEBUG root:127 - Started try 1
+2020-02-18 14:21:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:38 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:21:38 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:21:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:21:38 DEBUG root:127 - Started try 1
+2020-02-18 14:21:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:38 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:21:38 DEBUG root:131 - END
+2020-02-18 14:21:38 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:21:45 DEBUG root:459 - vin=asd
+2020-02-18 14:21:47 DEBUG root:83 - DealershipSystem.getVehicle(String id)
+2020-02-18 14:21:47 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:21:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:21:47 DEBUG root:127 - Started try 1
+2020-02-18 14:21:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:47 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:21:47 DEBUG root:87 - readSerial() returned Vehicle.
+2020-02-18 14:21:47 DEBUG root:464 - After getVehicle()
+2020-02-18 14:21:47 DEBUG root:440 - Still in while loop.
+2020-02-18 14:21:47 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:21:47 DEBUG root:127 - Before vList.add
+2020-02-18 14:21:47 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:21:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:21:47 DEBUG root:127 - Started try 1
+2020-02-18 14:21:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:47 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:21:47 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:21:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:21:47 DEBUG root:127 - Started try 1
+2020-02-18 14:21:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:47 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:21:47 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:21:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:21:47 DEBUG root:127 - Started try 1
+2020-02-18 14:21:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:47 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:21:47 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:21:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:21:47 DEBUG root:127 - Started try 1
+2020-02-18 14:21:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:21:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:21:47 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:21:47 DEBUG root:131 - END
+2020-02-18 14:21:47 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:23:48 DEBUG root:440 - Still in while loop.
+2020-02-18 14:23:48 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:23:48 DEBUG root:127 - Before vList.add
+2020-02-18 14:23:48 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:23:48 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:23:48 DEBUG root:127 - Started try 1
+2020-02-18 14:23:48 DEBUG root:146 - Ended try 1
+2020-02-18 14:23:48 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:23:48 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:23:48 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:23:48 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:23:48 DEBUG root:127 - Started try 1
+2020-02-18 14:23:48 DEBUG root:146 - Ended try 1
+2020-02-18 14:23:48 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:23:48 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:23:48 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:23:48 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:23:48 DEBUG root:127 - Started try 1
+2020-02-18 14:23:48 DEBUG root:146 - Ended try 1
+2020-02-18 14:23:48 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:23:48 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:23:48 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:23:48 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:23:48 DEBUG root:127 - Started try 1
+2020-02-18 14:23:48 DEBUG root:146 - Ended try 1
+2020-02-18 14:23:48 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:23:48 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:23:48 DEBUG root:131 - END
+2020-02-18 14:23:48 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:23:51 DEBUG root:459 - vin=
+2020-02-18 14:24:28 DEBUG root:40 - DealershipSystem.checkCustomerCredentials(String id, String pw)
+2020-02-18 14:24:28 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:24:28 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:24:28 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:24:28 DEBUG root:127 - Started try 1
+2020-02-18 14:24:28 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:28 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:28 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:24:28 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:24:28 DEBUG root:45 - pw input: def
+2020-02-18 14:24:28 DEBUG root:46 - pw file: def
+2020-02-18 14:24:28 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:24:28 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:24:28 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:24:28 DEBUG root:127 - Started try 1
+2020-02-18 14:24:28 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:28 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:28 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:24:28 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:24:38 DEBUG root:194 - viewVehicles()
+2020-02-18 14:24:38 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:24:38 DEBUG root:127 - Before vList.add
+2020-02-18 14:24:38 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:24:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:24:38 DEBUG root:127 - Started try 1
+2020-02-18 14:24:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:38 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:24:38 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:24:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:24:38 DEBUG root:127 - Started try 1
+2020-02-18 14:24:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:38 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:24:38 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:24:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:24:38 DEBUG root:127 - Started try 1
+2020-02-18 14:24:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:38 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:24:38 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:24:38 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:24:38 DEBUG root:127 - Started try 1
+2020-02-18 14:24:38 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:38 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:38 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:24:38 DEBUG root:131 - END
+2020-02-18 14:24:38 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:24:46 DEBUG root:319 - viewCustomerVehicles()
+2020-02-18 14:24:46 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:24:46 DEBUG root:127 - Before vList.add
+2020-02-18 14:24:46 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:24:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:24:46 DEBUG root:127 - Started try 1
+2020-02-18 14:24:46 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:46 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:46 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:24:46 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:24:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:24:46 DEBUG root:127 - Started try 1
+2020-02-18 14:24:46 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:46 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:46 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:24:46 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:24:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:24:46 DEBUG root:127 - Started try 1
+2020-02-18 14:24:46 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:46 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:46 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:24:46 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:24:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:24:46 DEBUG root:127 - Started try 1
+2020-02-18 14:24:46 DEBUG root:146 - Ended try 1
+2020-02-18 14:24:46 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:24:46 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:24:46 DEBUG root:131 - END
+2020-02-18 14:24:46 DEBUG root:322 - folder.list()[0]=_asd.dat
+2020-02-18 14:27:37 DEBUG root:57 - Program terminated soundly.
+2020-02-18 14:27:47 DEBUG root:40 - DealershipSystem.checkCustomerCredentials(String id, String pw)
+2020-02-18 14:27:47 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:27:47 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:27:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:27:47 DEBUG root:127 - Started try 1
+2020-02-18 14:27:48 DEBUG root:146 - Ended try 1
+2020-02-18 14:27:48 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:27:48 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:27:48 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:27:48 DEBUG root:45 - pw input: def
+2020-02-18 14:27:48 DEBUG root:46 - pw file: def
+2020-02-18 14:27:48 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:27:48 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:27:48 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:27:48 DEBUG root:127 - Started try 1
+2020-02-18 14:27:48 DEBUG root:146 - Ended try 1
+2020-02-18 14:27:48 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:27:48 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:27:48 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:27:50 DEBUG root:319 - viewCustomerVehicles()
+2020-02-18 14:27:50 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:27:50 DEBUG root:127 - Before vList.add
+2020-02-18 14:27:50 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:27:50 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:27:50 DEBUG root:127 - Started try 1
+2020-02-18 14:27:50 DEBUG root:146 - Ended try 1
+2020-02-18 14:27:50 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:27:50 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:27:50 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:27:50 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:27:50 DEBUG root:127 - Started try 1
+2020-02-18 14:27:50 DEBUG root:146 - Ended try 1
+2020-02-18 14:27:50 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:27:50 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:27:50 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:27:50 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:27:50 DEBUG root:127 - Started try 1
+2020-02-18 14:27:50 DEBUG root:146 - Ended try 1
+2020-02-18 14:27:50 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:27:50 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:27:50 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:27:50 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:27:50 DEBUG root:127 - Started try 1
+2020-02-18 14:27:50 DEBUG root:146 - Ended try 1
+2020-02-18 14:27:50 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:27:50 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:27:50 DEBUG root:131 - END
+2020-02-18 14:27:50 DEBUG root:322 - folder.list()[0]=_asd.dat
+2020-02-18 14:28:53 DEBUG root:40 - DealershipSystem.checkCustomerCredentials(String id, String pw)
+2020-02-18 14:28:53 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:28:53 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:28:53 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:28:53 DEBUG root:127 - Started try 1
+2020-02-18 14:28:53 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:53 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:53 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:28:53 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:28:53 DEBUG root:45 - pw input: def
+2020-02-18 14:28:53 DEBUG root:46 - pw file: def
+2020-02-18 14:28:53 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:28:53 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:28:53 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:28:53 DEBUG root:127 - Started try 1
+2020-02-18 14:28:53 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:53 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:53 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:28:53 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:28:55 DEBUG root:319 - viewCustomerVehicles()
+2020-02-18 14:28:55 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:28:55 DEBUG root:127 - Before vList.add
+2020-02-18 14:28:55 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:28:55 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:28:55 DEBUG root:127 - Started try 1
+2020-02-18 14:28:55 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:55 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:55 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:28:55 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:28:55 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:28:55 DEBUG root:127 - Started try 1
+2020-02-18 14:28:55 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:55 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:55 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:28:55 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:28:55 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:28:55 DEBUG root:127 - Started try 1
+2020-02-18 14:28:55 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:55 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:55 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:28:55 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:28:55 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:28:55 DEBUG root:127 - Started try 1
+2020-02-18 14:28:55 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:55 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:55 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:28:55 DEBUG root:131 - END
+2020-02-18 14:28:55 DEBUG root:322 - folder.list()[0]=_asd.dat
+2020-02-18 14:28:58 DEBUG root:194 - viewVehicles()
+2020-02-18 14:28:58 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:28:58 DEBUG root:127 - Before vList.add
+2020-02-18 14:28:58 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:28:58 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:28:58 DEBUG root:127 - Started try 1
+2020-02-18 14:28:58 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:58 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:58 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:28:58 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:28:58 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:28:58 DEBUG root:127 - Started try 1
+2020-02-18 14:28:58 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:58 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:58 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:28:58 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:28:58 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:28:58 DEBUG root:127 - Started try 1
+2020-02-18 14:28:58 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:58 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:58 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:28:58 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:28:58 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:28:58 DEBUG root:127 - Started try 1
+2020-02-18 14:28:58 DEBUG root:146 - Ended try 1
+2020-02-18 14:28:58 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:28:58 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:28:58 DEBUG root:131 - END
+2020-02-18 14:28:58 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:29:19 DEBUG root:27 - DealershipSystem.checkEmployeeCredentials(String id, String pw
+2020-02-18 14:29:19 DEBUG root:57 - DealershipSystem.getEmployer(String id)
+2020-02-18 14:29:19 DEBUG root:102 - In readSer, ID=ABC
+2020-02-18 14:29:19 DEBUG root:122 - locationName=src\main\resources\DAOFiles\employees\_ABC.dat
+2020-02-18 14:29:19 DEBUG root:127 - Started try 1
+2020-02-18 14:29:19 DEBUG root:146 - Ended try 1
+2020-02-18 14:29:19 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:29:19 DEBUG root:166 - Inferred ID=ABC
+2020-02-18 14:29:19 DEBUG root:61 - readSerial() returned Employee.
+2020-02-18 14:29:19 DEBUG root:34 - pw input: DEF
+2020-02-18 14:29:19 DEBUG root:35 - pw file: DEF
+2020-02-18 14:29:19 DEBUG root:57 - DealershipSystem.getEmployer(String id)
+2020-02-18 14:29:19 DEBUG root:102 - In readSer, ID=ABC
+2020-02-18 14:29:19 DEBUG root:122 - locationName=src\main\resources\DAOFiles\employees\_ABC.dat
+2020-02-18 14:29:19 DEBUG root:127 - Started try 1
+2020-02-18 14:29:19 DEBUG root:146 - Ended try 1
+2020-02-18 14:29:19 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:29:19 DEBUG root:166 - Inferred ID=ABC
+2020-02-18 14:29:19 DEBUG root:61 - readSerial() returned Employee.
+2020-02-18 14:31:15 DEBUG root:194 - viewVehicles()
+2020-02-18 14:31:15 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:31:15 DEBUG root:127 - Before vList.add
+2020-02-18 14:31:15 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:31:15 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:31:15 DEBUG root:127 - Started try 1
+2020-02-18 14:31:15 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:15 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:15 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:31:15 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:31:15 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:31:15 DEBUG root:127 - Started try 1
+2020-02-18 14:31:15 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:15 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:15 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:31:15 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:31:15 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:31:15 DEBUG root:127 - Started try 1
+2020-02-18 14:31:15 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:15 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:15 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:31:15 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:31:15 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:31:15 DEBUG root:127 - Started try 1
+2020-02-18 14:31:15 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:15 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:15 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:31:15 DEBUG root:131 - END
+2020-02-18 14:31:15 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:31:17 DEBUG root:337 - chooseOffers()
+2020-02-18 14:31:17 DEBUG root:351 - Still in while loop.
+2020-02-18 14:31:17 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:31:17 DEBUG root:127 - Before vList.add
+2020-02-18 14:31:17 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:31:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:31:17 DEBUG root:127 - Started try 1
+2020-02-18 14:31:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:17 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:31:17 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:31:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:31:17 DEBUG root:127 - Started try 1
+2020-02-18 14:31:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:17 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:31:17 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:31:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:31:17 DEBUG root:127 - Started try 1
+2020-02-18 14:31:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:17 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:31:17 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:31:17 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:31:17 DEBUG root:127 - Started try 1
+2020-02-18 14:31:17 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:17 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:17 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:31:17 DEBUG root:131 - END
+2020-02-18 14:31:17 DEBUG root:354 - folder.list()[0]=_asd.dat
+2020-02-18 14:31:43 DEBUG root:215 - viewVehicles()
+2020-02-18 14:31:43 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:31:43 DEBUG root:127 - Before vList.add
+2020-02-18 14:31:43 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:31:43 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:31:43 DEBUG root:127 - Started try 1
+2020-02-18 14:31:43 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:43 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:43 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:31:43 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:31:43 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:31:43 DEBUG root:127 - Started try 1
+2020-02-18 14:31:43 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:43 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:43 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:31:43 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:31:43 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:31:43 DEBUG root:127 - Started try 1
+2020-02-18 14:31:43 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:43 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:43 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:31:43 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:31:43 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:31:43 DEBUG root:127 - Started try 1
+2020-02-18 14:31:43 DEBUG root:146 - Ended try 1
+2020-02-18 14:31:43 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:31:43 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:31:43 DEBUG root:131 - END
+2020-02-18 14:31:43 DEBUG root:218 - folder.list()[0]=_asd.dat
+2020-02-18 14:32:01 DEBUG root:337 - chooseOffers()
+2020-02-18 14:32:01 DEBUG root:351 - Still in while loop.
+2020-02-18 14:32:01 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:32:01 DEBUG root:127 - Before vList.add
+2020-02-18 14:32:01 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:32:01 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:32:01 DEBUG root:127 - Started try 1
+2020-02-18 14:32:01 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:01 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:01 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:32:01 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:32:01 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:32:01 DEBUG root:127 - Started try 1
+2020-02-18 14:32:01 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:01 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:01 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:32:01 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:32:01 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:32:01 DEBUG root:127 - Started try 1
+2020-02-18 14:32:01 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:01 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:01 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:32:01 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:32:01 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:32:01 DEBUG root:127 - Started try 1
+2020-02-18 14:32:01 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:01 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:01 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:32:01 DEBUG root:131 - END
+2020-02-18 14:32:01 DEBUG root:354 - folder.list()[0]=_asd.dat
+2020-02-18 14:32:09 DEBUG root:370 - vin=qwe
+2020-02-18 14:32:09 DEBUG root:83 - DealershipSystem.getVehicle(String id)
+2020-02-18 14:32:09 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:32:09 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:32:09 DEBUG root:127 - Started try 1
+2020-02-18 14:32:09 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:09 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:09 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:32:09 DEBUG root:87 - readSerial() returned Vehicle.
+2020-02-18 14:32:09 DEBUG root:374 - After getVehicle()
+2020-02-18 14:32:09 DEBUG root:18 - DealershipSystem.calculatePayments(String principle, String duration)
+2020-02-18 14:32:09 DEBUG root:51 - DealershipSystem.save(Object o)
+2020-02-18 14:32:09 DEBUG root:24 - writeSerial() called
+2020-02-18 14:32:09 INFO  root:56 - writeSerial called
+2020-02-18 14:32:09 INFO  root:61 - Variables initialized
+2020-02-18 14:32:09 DEBUG root:72 - file steams opened and written successfully
+2020-02-18 14:32:09 DEBUG root:80 - Finished File Output
+2020-02-18 14:32:09 DEBUG root:84 - Finished closing file-out resources.
+2020-02-18 14:32:09 INFO  root:90 - writeSerial FINISHED
+2020-02-18 14:32:09 DEBUG root:351 - Still in while loop.
+2020-02-18 14:32:09 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:32:09 DEBUG root:127 - Before vList.add
+2020-02-18 14:32:09 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:32:09 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:32:09 DEBUG root:127 - Started try 1
+2020-02-18 14:32:09 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:09 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:09 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:32:09 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:32:09 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:32:09 DEBUG root:127 - Started try 1
+2020-02-18 14:32:09 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:09 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:09 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:32:09 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:32:09 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:32:09 DEBUG root:127 - Started try 1
+2020-02-18 14:32:09 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:09 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:09 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:32:09 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:32:09 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:32:09 DEBUG root:127 - Started try 1
+2020-02-18 14:32:09 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:09 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:09 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:32:09 DEBUG root:131 - END
+2020-02-18 14:32:09 DEBUG root:354 - folder.list()[0]=_asd.dat
+2020-02-18 14:32:18 DEBUG root:194 - viewVehicles()
+2020-02-18 14:32:18 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:32:18 DEBUG root:127 - Before vList.add
+2020-02-18 14:32:18 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:32:18 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:32:18 DEBUG root:127 - Started try 1
+2020-02-18 14:32:18 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:18 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:18 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:32:18 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:32:18 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:32:18 DEBUG root:127 - Started try 1
+2020-02-18 14:32:18 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:18 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:18 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:32:18 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:32:18 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:32:18 DEBUG root:127 - Started try 1
+2020-02-18 14:32:18 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:18 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:18 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:32:18 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:32:18 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:32:18 DEBUG root:127 - Started try 1
+2020-02-18 14:32:18 DEBUG root:146 - Ended try 1
+2020-02-18 14:32:18 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:32:18 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:32:18 DEBUG root:131 - END
+2020-02-18 14:32:18 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:33:14 DEBUG root:27 - DealershipSystem.checkEmployeeCredentials(String id, String pw
+2020-02-18 14:33:14 DEBUG root:57 - DealershipSystem.getEmployer(String id)
+2020-02-18 14:33:14 DEBUG root:102 - In readSer, ID=ABC
+2020-02-18 14:33:14 DEBUG root:122 - locationName=src\main\resources\DAOFiles\employees\_ABC.dat
+2020-02-18 14:33:14 DEBUG root:127 - Started try 1
+2020-02-18 14:33:14 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:14 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:14 DEBUG root:166 - Inferred ID=ABC
+2020-02-18 14:33:14 DEBUG root:61 - readSerial() returned Employee.
+2020-02-18 14:33:14 DEBUG root:34 - pw input: DEF
+2020-02-18 14:33:14 DEBUG root:35 - pw file: DEF
+2020-02-18 14:33:14 DEBUG root:57 - DealershipSystem.getEmployer(String id)
+2020-02-18 14:33:14 DEBUG root:102 - In readSer, ID=ABC
+2020-02-18 14:33:14 DEBUG root:122 - locationName=src\main\resources\DAOFiles\employees\_ABC.dat
+2020-02-18 14:33:14 DEBUG root:127 - Started try 1
+2020-02-18 14:33:14 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:14 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:14 DEBUG root:166 - Inferred ID=ABC
+2020-02-18 14:33:14 DEBUG root:61 - readSerial() returned Employee.
+2020-02-18 14:33:22 DEBUG root:194 - viewVehicles()
+2020-02-18 14:33:22 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:33:22 DEBUG root:127 - Before vList.add
+2020-02-18 14:33:22 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:33:22 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:33:22 DEBUG root:127 - Started try 1
+2020-02-18 14:33:22 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:22 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:22 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:33:22 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:33:22 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:33:22 DEBUG root:127 - Started try 1
+2020-02-18 14:33:22 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:22 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:22 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:33:22 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:33:22 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:33:22 DEBUG root:127 - Started try 1
+2020-02-18 14:33:22 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:22 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:22 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:33:22 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:33:22 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:33:22 DEBUG root:127 - Started try 1
+2020-02-18 14:33:22 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:22 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:22 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:33:22 DEBUG root:131 - END
+2020-02-18 14:33:22 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:33:29 DEBUG root:215 - viewVehicles()
+2020-02-18 14:33:29 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:33:29 DEBUG root:127 - Before vList.add
+2020-02-18 14:33:29 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:33:29 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:33:29 DEBUG root:127 - Started try 1
+2020-02-18 14:33:29 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:29 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:29 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:33:29 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:33:29 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:33:29 DEBUG root:127 - Started try 1
+2020-02-18 14:33:29 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:29 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:29 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:33:29 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:33:29 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:33:29 DEBUG root:127 - Started try 1
+2020-02-18 14:33:29 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:29 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:29 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:33:29 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:33:29 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:33:29 DEBUG root:127 - Started try 1
+2020-02-18 14:33:29 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:29 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:29 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:33:29 DEBUG root:131 - END
+2020-02-18 14:33:29 DEBUG root:218 - folder.list()[0]=_asd.dat
+2020-02-18 14:33:37 DEBUG root:194 - viewVehicles()
+2020-02-18 14:33:37 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:33:37 DEBUG root:127 - Before vList.add
+2020-02-18 14:33:37 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:33:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:33:37 DEBUG root:127 - Started try 1
+2020-02-18 14:33:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:37 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:33:37 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:33:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:33:37 DEBUG root:127 - Started try 1
+2020-02-18 14:33:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:37 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:33:37 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:33:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:33:37 DEBUG root:127 - Started try 1
+2020-02-18 14:33:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:37 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:33:37 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:33:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:33:37 DEBUG root:127 - Started try 1
+2020-02-18 14:33:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:33:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:33:37 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:33:37 DEBUG root:131 - END
+2020-02-18 14:33:37 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:34:10 DEBUG root:40 - DealershipSystem.checkCustomerCredentials(String id, String pw)
+2020-02-18 14:34:10 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:34:10 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:34:10 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:34:10 DEBUG root:127 - Started try 1
+2020-02-18 14:34:10 DEBUG root:146 - Ended try 1
+2020-02-18 14:34:10 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:34:10 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:34:10 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:34:10 DEBUG root:45 - pw input: def
+2020-02-18 14:34:10 DEBUG root:46 - pw file: def
+2020-02-18 14:34:10 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:34:10 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:34:10 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:34:10 DEBUG root:127 - Started try 1
+2020-02-18 14:34:10 DEBUG root:146 - Ended try 1
+2020-02-18 14:34:10 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:34:10 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:34:10 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:47:46 DEBUG root:319 - viewCustomerVehicles()
+2020-02-18 14:47:46 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:47:46 DEBUG root:127 - Before vList.add
+2020-02-18 14:47:46 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:47:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:47:46 DEBUG root:127 - Started try 1
+2020-02-18 14:47:46 DEBUG root:146 - Ended try 1
+2020-02-18 14:47:46 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:47:46 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:47:46 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:47:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:47:46 DEBUG root:127 - Started try 1
+2020-02-18 14:47:46 DEBUG root:146 - Ended try 1
+2020-02-18 14:47:46 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:47:46 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:47:46 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:47:46 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:47:46 DEBUG root:127 - Started try 1
+2020-02-18 14:47:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:47:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:47:47 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:47:47 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:47:47 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:47:47 DEBUG root:127 - Started try 1
+2020-02-18 14:47:47 DEBUG root:146 - Ended try 1
+2020-02-18 14:47:47 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:47:47 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:47:47 DEBUG root:131 - END
+2020-02-18 14:47:47 DEBUG root:322 - folder.list()[0]=_asd.dat
+2020-02-18 14:50:59 DEBUG root:194 - viewVehicles()
+2020-02-18 14:50:59 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:50:59 DEBUG root:127 - Before vList.add
+2020-02-18 14:50:59 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:50:59 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:50:59 DEBUG root:127 - Started try 1
+2020-02-18 14:50:59 DEBUG root:146 - Ended try 1
+2020-02-18 14:50:59 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:50:59 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:50:59 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:50:59 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:50:59 DEBUG root:127 - Started try 1
+2020-02-18 14:50:59 DEBUG root:146 - Ended try 1
+2020-02-18 14:50:59 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:50:59 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:50:59 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:50:59 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:50:59 DEBUG root:127 - Started try 1
+2020-02-18 14:50:59 DEBUG root:146 - Ended try 1
+2020-02-18 14:50:59 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:50:59 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:50:59 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:50:59 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:50:59 DEBUG root:127 - Started try 1
+2020-02-18 14:50:59 DEBUG root:146 - Ended try 1
+2020-02-18 14:50:59 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:50:59 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:50:59 DEBUG root:131 - END
+2020-02-18 14:50:59 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:51:05 DEBUG root:426 - makeOffers()
+2020-02-18 14:51:05 DEBUG root:440 - Still in while loop.
+2020-02-18 14:51:05 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:51:05 DEBUG root:127 - Before vList.add
+2020-02-18 14:51:05 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:51:05 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:51:05 DEBUG root:127 - Started try 1
+2020-02-18 14:51:05 DEBUG root:146 - Ended try 1
+2020-02-18 14:51:05 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:51:05 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:51:05 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:51:05 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:51:05 DEBUG root:127 - Started try 1
+2020-02-18 14:51:05 DEBUG root:146 - Ended try 1
+2020-02-18 14:51:05 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:51:05 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:51:05 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:51:05 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:51:05 DEBUG root:127 - Started try 1
+2020-02-18 14:51:05 DEBUG root:146 - Ended try 1
+2020-02-18 14:51:05 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:51:05 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:51:05 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:51:05 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:51:05 DEBUG root:127 - Started try 1
+2020-02-18 14:51:05 DEBUG root:146 - Ended try 1
+2020-02-18 14:51:05 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:51:05 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:51:05 DEBUG root:131 - END
+2020-02-18 14:51:05 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:54:16 DEBUG root:40 - DealershipSystem.checkCustomerCredentials(String id, String pw)
+2020-02-18 14:54:16 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:54:16 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:54:16 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:54:16 DEBUG root:127 - Started try 1
+2020-02-18 14:54:16 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:16 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:16 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:54:16 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:54:16 DEBUG root:45 - pw input: def
+2020-02-18 14:54:16 DEBUG root:46 - pw file: def
+2020-02-18 14:54:16 DEBUG root:70 - DealershipSystem.getCustomer(String id)
+2020-02-18 14:54:16 DEBUG root:102 - In readSer, ID=abc
+2020-02-18 14:54:16 DEBUG root:122 - locationName=src\main\resources\DAOFiles\customers\_abc.dat
+2020-02-18 14:54:16 DEBUG root:127 - Started try 1
+2020-02-18 14:54:16 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:16 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:16 DEBUG root:166 - Inferred ID=abc
+2020-02-18 14:54:16 DEBUG root:74 - readSerial() returned Customer.
+2020-02-18 14:54:20 DEBUG root:426 - makeOffers()
+2020-02-18 14:54:20 DEBUG root:440 - Still in while loop.
+2020-02-18 14:54:20 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:54:20 DEBUG root:127 - Before vList.add
+2020-02-18 14:54:20 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:54:20 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:54:20 DEBUG root:127 - Started try 1
+2020-02-18 14:54:20 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:20 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:20 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:54:20 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:54:20 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:54:20 DEBUG root:127 - Started try 1
+2020-02-18 14:54:20 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:20 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:20 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:54:20 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:54:20 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:54:20 DEBUG root:127 - Started try 1
+2020-02-18 14:54:20 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:20 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:20 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:54:20 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:54:20 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:54:20 DEBUG root:127 - Started try 1
+2020-02-18 14:54:20 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:20 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:20 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:54:20 DEBUG root:131 - END
+2020-02-18 14:54:20 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:54:37 DEBUG root:462 - vin=qwe
+2020-02-18 14:54:42 DEBUG root:83 - DealershipSystem.getVehicle(String id)
+2020-02-18 14:54:42 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:54:42 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:54:42 DEBUG root:127 - Started try 1
+2020-02-18 14:54:42 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:42 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:42 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:54:42 DEBUG root:87 - readSerial() returned Vehicle.
+2020-02-18 14:54:42 DEBUG root:467 - After getVehicle()
+2020-02-18 14:54:42 DEBUG root:440 - Still in while loop.
+2020-02-18 14:54:42 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:54:42 DEBUG root:127 - Before vList.add
+2020-02-18 14:54:42 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:54:42 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:54:42 DEBUG root:127 - Started try 1
+2020-02-18 14:54:42 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:42 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:42 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:54:42 DEBUG root:102 - In readSer, ID=qwe
+2020-02-18 14:54:42 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_qwe.dat
+2020-02-18 14:54:42 DEBUG root:127 - Started try 1
+2020-02-18 14:54:42 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:42 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:42 DEBUG root:166 - Inferred ID=qwe
+2020-02-18 14:54:42 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:54:42 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:54:42 DEBUG root:127 - Started try 1
+2020-02-18 14:54:42 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:42 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:42 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:54:42 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:54:42 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:54:42 DEBUG root:127 - Started try 1
+2020-02-18 14:54:42 DEBUG root:146 - Ended try 1
+2020-02-18 14:54:42 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:54:42 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:54:42 DEBUG root:131 - END
+2020-02-18 14:54:42 DEBUG root:443 - folder.list()[0]=_asd.dat
+2020-02-18 14:55:16 DEBUG root:27 - DealershipSystem.checkEmployeeCredentials(String id, String pw
+2020-02-18 14:55:16 DEBUG root:57 - DealershipSystem.getEmployer(String id)
+2020-02-18 14:55:16 DEBUG root:102 - In readSer, ID=ABC
+2020-02-18 14:55:16 DEBUG root:122 - locationName=src\main\resources\DAOFiles\employees\_ABC.dat
+2020-02-18 14:55:16 DEBUG root:127 - Started try 1
+2020-02-18 14:55:16 DEBUG root:146 - Ended try 1
+2020-02-18 14:55:16 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:55:16 DEBUG root:166 - Inferred ID=ABC
+2020-02-18 14:55:16 DEBUG root:61 - readSerial() returned Employee.
+2020-02-18 14:55:16 DEBUG root:34 - pw input: DEF
+2020-02-18 14:55:16 DEBUG root:35 - pw file: DEF
+2020-02-18 14:55:16 DEBUG root:57 - DealershipSystem.getEmployer(String id)
+2020-02-18 14:55:16 DEBUG root:102 - In readSer, ID=ABC
+2020-02-18 14:55:16 DEBUG root:122 - locationName=src\main\resources\DAOFiles\employees\_ABC.dat
+2020-02-18 14:55:16 DEBUG root:127 - Started try 1
+2020-02-18 14:55:16 DEBUG root:146 - Ended try 1
+2020-02-18 14:55:16 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:55:16 DEBUG root:166 - Inferred ID=ABC
+2020-02-18 14:55:16 DEBUG root:61 - readSerial() returned Employee.
+2020-02-18 14:58:32 DEBUG root:194 - viewVehicles()
+2020-02-18 14:58:32 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:58:32 DEBUG root:127 - Before vList.add
+2020-02-18 14:58:32 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:58:32 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:58:32 DEBUG root:127 - Started try 1
+2020-02-18 14:58:32 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:32 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:32 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:58:32 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:58:32 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:58:32 DEBUG root:127 - Started try 1
+2020-02-18 14:58:32 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:32 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:32 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:58:32 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:58:32 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:58:32 DEBUG root:127 - Started try 1
+2020-02-18 14:58:32 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:32 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:32 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:58:32 DEBUG root:131 - END
+2020-02-18 14:58:32 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:58:34 DEBUG root:215 - viewVehicles()
+2020-02-18 14:58:34 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:58:34 DEBUG root:127 - Before vList.add
+2020-02-18 14:58:34 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:58:34 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:58:34 DEBUG root:127 - Started try 1
+2020-02-18 14:58:34 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:34 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:34 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:58:34 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:58:34 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:58:34 DEBUG root:127 - Started try 1
+2020-02-18 14:58:34 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:34 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:34 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:58:34 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:58:34 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:58:34 DEBUG root:127 - Started try 1
+2020-02-18 14:58:34 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:34 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:34 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:58:34 DEBUG root:131 - END
+2020-02-18 14:58:34 DEBUG root:218 - folder.list()[0]=_asd.dat
+2020-02-18 14:58:37 DEBUG root:194 - viewVehicles()
+2020-02-18 14:58:37 DEBUG root:97 - DealershipSystem.getVehicles(String[] fileNames)
+2020-02-18 14:58:37 DEBUG root:127 - Before vList.add
+2020-02-18 14:58:37 DEBUG root:102 - In readSer, ID=asd
+2020-02-18 14:58:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_asd.dat
+2020-02-18 14:58:37 DEBUG root:127 - Started try 1
+2020-02-18 14:58:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:37 DEBUG root:166 - Inferred ID=asd
+2020-02-18 14:58:37 DEBUG root:102 - In readSer, ID=sdf
+2020-02-18 14:58:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_sdf.dat
+2020-02-18 14:58:37 DEBUG root:127 - Started try 1
+2020-02-18 14:58:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:37 DEBUG root:166 - Inferred ID=sdf
+2020-02-18 14:58:37 DEBUG root:102 - In readSer, ID=wer
+2020-02-18 14:58:37 DEBUG root:122 - locationName=src\main\resources\DAOFiles\vehicles\_wer.dat
+2020-02-18 14:58:37 DEBUG root:127 - Started try 1
+2020-02-18 14:58:37 DEBUG root:146 - Ended try 1
+2020-02-18 14:58:37 DEBUG root:159 - Finished closing file-out resources.
+2020-02-18 14:58:37 DEBUG root:166 - Inferred ID=wer
+2020-02-18 14:58:37 DEBUG root:131 - END
+2020-02-18 14:58:37 DEBUG root:197 - folder.list()[0]=_asd.dat
+2020-02-18 14:59:07 DEBUG root:57 - Program terminated soundly.
