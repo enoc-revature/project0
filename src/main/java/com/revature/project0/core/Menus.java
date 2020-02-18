@@ -11,13 +11,17 @@ public class Menus {
 	private static Logger log = Logger.getRootLogger();
 	Scanner s = new Scanner(System.in);
 
-	public void employeeLogin() {
+	public Employee employeeLogin() {
 		System.out.print("Employee ID: ");
 		String id = s.nextLine();
 		System.out.print("Password: ");
 		String pw = s.nextLine();
-		
-		
+		if(DealershipSystem.checkEmployeeCredentials(id, pw)) {
+			return DealershipSystem.getEmployee(id);
+		} else {
+			return null;
+		}
+
 	}
 
 	public void customerLogin() {
@@ -135,8 +139,9 @@ public class Menus {
 		
 	public void  viewVehicles() {
 		// Retrieve Vehicles
-		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
-		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(file.list());
+		File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
+		log.debug("folder.list()[0]=" + folder.list()[0]);
 		//String[] fileNames = file.list();
 		//vList = DealershipSystem.getVehicle(fileNames);
 

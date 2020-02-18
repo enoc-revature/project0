@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.apache.log4j.BasicConfigurator;
@@ -403,6 +404,39 @@ public class TestProject0 {
 
     	assertArrayEquals(expectation, result);
 	}
+
+	@Test
+	public void DealershipGetVehicle() {
+		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
+		//Scanner s = new Scanner(System.in);
+
+		Vehicle v = new Vehicle();
+		Vehicle vReturned = new Vehicle();
+		v.make = "a";
+		v.model = "b";
+		v.vin = "123";
+		String[] expectation = {v.make, v.model, v.vin};
+		//System.out.println(e.firstName);
+		//System.out.println(e.lastName);
+		//System.out.println(e.id);
+		//System.out.println(e.password);
+
+		//String fileLocation = dir+"_E_" + e.id + ".dat";
+		String fileLocation = dir+ v.vin + ".dat";
+		//System.out.println(fileLocation);
+		//File file = new File(fileLocation);
+		DealershipSystem.save(v);
+		//System.out.println("###Before dao.readSerial");
+		vReturned = DealershipSystem.getVehicle(v.vin);
+		//System.out.println("###After dao.readSerial");
+		//System.out.println(eReturned.firstName);
+		//System.out.println(eReturned.lastName);
+		//System.out.println(eReturned.id);
+		//System.out.println(eReturned.password);
+		String[] result = {vReturned.make, vReturned.model, vReturned.vin};
+
+    	assertArrayEquals(expectation, result);
+	}
 	
 	@Test
 	public void DealershipCheckEmployeeCredentialsTrue() {
@@ -458,42 +492,41 @@ public class TestProject0 {
 		assertEquals(false, DealershipSystem.checkEmployeeCredentials(c.creditCard, c.password+"N"));	
 	}
 
-	//@Test //Not finished
-	public void DealershipGetVehicle() {
-		String dir = DealershipSystem.DIRECTORYNAME + "employees\\";
-		//Scanner s = new Scanner(System.in);
-
-		Vehicle v = new Vehicle();
-		Vehicle vReturned = new Vehicle();
-		v.make = "a";
-		v.model = "b";
-		v.vin = "_V_123";
-		String[] expectation = {v.make, v.model, v.vin};
-		//System.out.println(e.firstName);
-		//System.out.println(e.lastName);
-		//System.out.println(e.id);
-		//System.out.println(e.password);
-
-		//String fileLocation = dir+"_E_" + e.id + ".dat";
-		String fileLocation = dir+ v.vin + ".dat";
-		//System.out.println(fileLocation);
-		//File file = new File(fileLocation);
-		DealershipSystem.save(v);
-		//System.out.println("###Before dao.readSerial");
-		vReturned = DealershipSystem.getVehicle(v.vin);
-		//System.out.println("###After dao.readSerial");
-		//System.out.println(eReturned.firstName);
-		//System.out.println(eReturned.lastName);
-		//System.out.println(eReturned.id);
-		//System.out.println(eReturned.password);
-		String[] result = {vReturned.make, vReturned.model, vReturned.vin};
-
-    	assertArrayEquals(expectation, result);
-	}
+	
 	//public static ArrayList<Vehicle> get(String[] idList) {
-	@Test
-	public void DealershipViewVehicles() {
+	//@Test // Not finished
+	public void DealershipGetVehicles() {
+		ArrayList<Vehicle> vList = new ArrayList<Vehicle>();
+		ArrayList<Vehicle> vListReturned = new ArrayList<Vehicle>();
+		ArrayList<Vehicle> listGetVehicles = new ArrayList<Vehicle>();
+		Vehicle v1 = new Vehicle();
+		v1.make = "a";
+		v1.model = "b";
+		v1.vin = "123";
+		DealershipSystem.save(v1);
+		String[] vFields1 = {v1.make, v1.model, v1.vin};
+
+		/*
+		Vehicle v2 = new Vehicle();
+		v2.make = "c";
+		v2.model = "d";
+		v2.vin = "456";
+		DealershipSystem.save(v2);
+		String[] vFields2 = {v2.make, v2.model, v2.vin};
+		*/
+		vList.add(v1);
+		//vList.add(v2);
+
+		String[] idList = {"123"};
 		
+		SerializationDAO dao = new SerializationDAO();
+		for(String id : idList) 
+			vListReturned.add((Vehicle) dao.readSerial(id, 'V'));
+
+		listGetVehicles = DealershipSystem.getVehicles(idList);
+
+		//assertArrayEquals(vList, vListReturned);
+		//assertArrayEquals(vList.get(0), );
 	}
 	// ---------------------------------
 

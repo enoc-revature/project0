@@ -93,8 +93,6 @@ public  class DealershipSystem<T> {
 		return vList;
 	}
 	
-	public static void viewVehicles(ArrayList<Vehicle> vList) {
-		
-	}
+	
 
 }
