@@ -26,21 +26,32 @@ public class Main {
 		BasicConfigurator.configure();
 		Scanner s = new Scanner(System.in);
 		Menus menus = new Menus();
+		String input = "";
+		boolean madeAccount = false;
+		char accountType;
 		while(!exitProgram) {
+			madeAccount = false;
 			System.out.print("Are you an Employee(E), Customer(C), Not a Member(N), or Quit(Q): ");
-			char accountType = s.nextLine().toUpperCase().charAt(0);
-			
+			input = s.nextLine();
+			if(input.length()==0)
+				continue;
+			accountType = input.toUpperCase().charAt(0);
+
 			switch(accountType) {
 			case 'E' : acct = menus.employeeLogin();
 						break;
 			case 'C' : acct = menus.customerLogin();
 						break;
 			case 'N'  : menus.createAccount();
+						madeAccount=true;
 						acct = null;
 						break;
 			default  : exitProgram=true;
 			}
 			//exitProgram = true; // Avoid infinite loop atm
+			
+			if(madeAccount)
+				continue;
 			
 			if(!exitProgram) {
 				if(acct == null) {
@@ -48,7 +59,7 @@ public class Main {
 				} else if(acct instanceof Employee){
 					menus.employeeMenu();
 				} else if(acct instanceof Customer){
-					menus.customerMenu();
+					menus.customerMenu((Customer) acct);
 				}
 			}
 			//acct = null;

@@ -1,4 +1,5 @@
 package com.revature.project0.dao;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -119,6 +120,9 @@ public class SerializationDAO<T> {
 		Object o = new Object();
 		T t;
 		log.debug("locationName=" + locationName);
+		File file = new File(locationName);
+		if(!file.exists())
+			return null;
 		try {
 			log.debug("Started try 1");
 			fis = new FileInputStream(locationName);
@@ -141,7 +145,9 @@ public class SerializationDAO<T> {
 			}
 			log.debug("Ended try 1");
 		} catch (FileNotFoundException e) {
+			log.debug("FILE NOT FOUND.");
 			e.printStackTrace();
+			return null;
 		} catch(IOException e) {
 			e.printStackTrace();
 		} catch(ClassNotFoundException e) {
@@ -168,6 +174,7 @@ public class SerializationDAO<T> {
 			System.out.println("ERROR: INCORRECT CLASS TYPE ON FILE. TERMINATING PROGRAM");
 			System.exit(-103);
 		}
+		log.debug("readSerial() reached end");
 		return null;
 	}
 

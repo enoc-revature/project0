@@ -2,6 +2,7 @@ package com.revature.project0.core;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
@@ -24,19 +25,25 @@ public  class DealershipSystem<T> {
 	
 	public static boolean checkEmployeeCredentials(String id, String pw) {
 		log.debug("DealershipSystem.checkEmployeeCredentials(String id, String pw");
-		SerializationDAO dao = new SerializationDAO();
-		Employee emp = (Employee) dao.readSerial(id,'E');
-		//log.debug("pw input: "+pw);
-		//log.debug("pw file: " + emp.password);
+		//SerializationDAO dao = new SerializationDAO();
+		//Employee emp = (Employee) dao.readSerial(id,'E');
+		Employee emp = getEmployee(id);
+		if(emp == null) {
+			return false;
+		}
+		log.debug("pw input: "+pw);
+		log.debug("pw file: " + emp.password);
 		return pw.equals(emp.password);
 	}
 
 	public static boolean checkCustomerCredentials(String id, String pw) {
 		log.debug("DealershipSystem.checkCustomerCredentials(String id, String pw)");
-		SerializationDAO dao = new SerializationDAO();
-		Customer cus = (Customer) dao.readSerial(id,'C');
-		//log.debug("pw input: "+pw);
-		//log.debug("pw file: " + emp.password);
+		Customer cus = getCustomer(id);
+		if(cus == null) {
+			return false;
+		}
+		log.debug("pw input: "+pw);
+		log.debug("pw file: " + cus.password);
 		return pw.equals(cus.password);
 	}
 	
@@ -49,19 +56,40 @@ public  class DealershipSystem<T> {
 	public static Employee getEmployee(String id) {
 		log.debug("DealershipSystem.getEmployer(String id)");
 		SerializationDAO dao = new SerializationDAO();
-		return (Employee) dao.readSerial(id, 'E');
+		Employee emp = (Employee) dao.readSerial(id, 'E');
+		if(emp != null) {
+			log.debug("readSerial() returned Employee.");
+			return emp;
+		} else {
+			log.debug("readSerial() returned null.");
+			return null;
+		}
 	}
 
 	public static Customer getCustomer(String id) {
 		log.debug("DealershipSystem.getCustomer(String id)");
 		SerializationDAO dao = new SerializationDAO();
-		return (Customer) dao.readSerial(id, 'C');
+		Customer cus = (Customer) dao.readSerial(id, 'C');
+		if(cus != null) {
+			log.debug("readSerial() returned Customer.");
+			return cus;
+		} else {
+			log.debug("readSerial() returned null.");
+			return null;
+		}
 	}
 
 	public static Vehicle getVehicle(String id) {
 		log.debug("DealershipSystem.getVehicle(String id)");
 		SerializationDAO dao = new SerializationDAO();
-		return (Vehicle) dao.readSerial(id, 'V');
+		Vehicle veh = (Vehicle) dao.readSerial(id, 'C');
+		if(veh != null) {
+			log.debug("readSerial() returned Vehicle.");
+			return veh;
+		} else {
+			log.debug("readSerial() returned null.");
+			return null;
+		}
 	}
 
 	public static ArrayList<Vehicle> getVehicles(String[] fileNames) {
@@ -107,7 +135,4 @@ public  class DealershipSystem<T> {
 	public static boolean rejectPended(Vehicle v) {
 		return v.pended;
 	}
-	
-	
-
 }

@@ -40,11 +40,15 @@ public class Menus {
 
 	public void employeeMenu() {
 		boolean leaveMenu = false;
+		char option;
 		while(!leaveMenu) {
-			System.out.println("What would you like to do?");
-			System.out.print("A) Add a vehicle\nB) Remove a vehicle\nC) View vehicles in the lot.");
-			System.out.print("D) View Payments\nQ) Quit\n");
-			char option = s.nextLine().toUpperCase().charAt(0);
+			System.out.print("A) Add a vehicle\nB) Remove a vehicle\nC) View vehicles in the lot.\n");
+			System.out.print("D) View Paymentsand Payments\nQ) Logoff\n");
+			System.out.print("What would you like to do? ");
+			String input = s.nextLine();
+			if(input.length()==0)
+				continue;
+			option = input.toUpperCase().charAt(0);
 			switch(option) {
 			case 'A' : addVehicle();
 						break;
@@ -52,23 +56,31 @@ public class Menus {
 						break;
 			case 'C' : viewVehicles();
 						break;
+			case 'D' : viewAllPayments();
+						break;
 			default : leaveMenu=true;
 			}
 		}
 	}
 	
-	public void customerMenu() {
+	public void customerMenu(Customer c) {
 		boolean leaveMenu = false;
+		char option;
 		while(!leaveMenu) {
-			System.out.println("What would you like to do?");
-			System.out.print("A) View vehicles in the lot.\nB) Add a vehicle\nC) Remove a Vehicle\nQ) Quit\n");
-			char option = s.nextLine().toUpperCase().charAt(0);
+			System.out.print("A) View vehicles in the lot.\nB) Make an Offer\n");
+			System.out.print("C) View your vehicles and payments\nQ) Logoff\n");
+			System.out.println("What would you like to do? ");
+			String input = s.nextLine();
+			if(input.length()==0)
+				continue;
+			option = input.toUpperCase().charAt(0);
+
 			switch(option) {
 			case 'A' : viewVehicles();
 						break;
-			case 'B' : addVehicle();
+			case 'B' : makeOffer();
 						break;
-			case 'C' : removeVehicle();
+			case 'C' : viewCustomerVehicles(c);
 						break;
 			default : leaveMenu=true;
 			}
@@ -77,7 +89,10 @@ public class Menus {
 
 	public void createAccount() {
 		System.out.print("Would you like to create an employee(E) or customer(C) account: ");
-		char accountType = s.nextLine().toUpperCase().charAt(0);
+		String input = s.nextLine();
+		if(input.length()==0)
+			return;
+		char accountType = input.toUpperCase().charAt(0);
 		
 		switch(accountType) {
 		case 'E': createEmployee();
@@ -164,7 +179,7 @@ public class Menus {
 			try {
 				file.delete();
 			} catch(SecurityException e) {
-				log.error("Unable to access file due to permissions.");
+				log.error("Unable to access file due to file access permissions.");
 				e.printStackTrace();
 			} 
 	}
@@ -179,11 +194,56 @@ public class Menus {
 		//vList = DealershipSystem.getVehicle(fileNames);
 
 		// List Vehicles
-		System.out.println("Make\tModel\tBid\tOffer\tPended");
-		for(Vehicle v : vList)
-			System.out.printf("%s\t%s\t%s\t%s\t%n", v.model, v.model, v.bid, v.highestOffer, v.pended);
+		System.out.println("Make\tModel\tBid\tOffer\tPrice\tVIN\tPended");
+		for(Vehicle v : vList) {
+			if(v.pended) 
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
+						v.model, v.model, null, null, v.highestOffer, v.vin, v.pended);
+			else
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
+						v.model, v.model, v.bid, v.highestOffer, null, v.vin, v.pended);
+		}
 	}
 
+	public void  viewAllPayments() {
+		// Display Vehicles
+		log.debug("viewVehicles()");
+		File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
+		log.debug("folder.list()[0]=" + folder.list()[0]);
+		//String[] fileNames = file.list();
+		//vList = DealershipSystem.getVehicle(fileNames);
+
+		// List Vehicles
+		System.out.println("Make\tModel\tVIN\tOwner\tPrinciple\tPayments");
+		for(Vehicle v : vList) {
+			if(v.pended) {
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
+						v.model, v.model, v.vin, v.highestBidderOrOwner, v.highestOffer, v.monthlyPayment);
+			}
+		}
+	}
+	/*	
+	public void  viewOffers() {
+		// Display Vehicles
+		log.debug("viewVehicles()");
+		File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
+		log.debug("folder.list()[0]=" + folder.list()[0]);
+		//String[] fileNames = file.list();
+		//vList = DealershipSystem.getVehicle(fileNames);
+
+		// List Vehicles
+		System.out.println("Make\tModel\tBid\tOffer\tVIN\tOwner\tPayments");
+		for(Vehicle v : vList) {
+			if(!v.pended) {
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
+						v.model, v.model, v.bid, v.highestOffer, v.vin, v.highestBidderOrOwner);
+			}
+		}
+	}
+	*/
+	/*
 	public void  viewPayments() {
 		// Display Vehicles
 		log.debug("viewPayments()");
@@ -198,10 +258,9 @@ public class Menus {
 		for(Vehicle v : vList)
 			System.out.printf("%s\t%s\t%s\t%s\t%n", v.model, v.model, v.monthlyPayment);
 	}
+	*/
 
 	public void  viewOffers() {
-		// Display Vehicles
-		Scanner s = new Scanner(System.in);
 		log.debug("viewOffers()");
 		File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
 		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
@@ -210,18 +269,25 @@ public class Menus {
 		//vList = DealershipSystem.getVehicle(fileNames);
 
 		// List Vehicles
-		System.out.println("Make\tModel\tBid\tOffer");
+		System.out.println("Make\tModel\tBid\tOffer\tVIN\tOwner\tPayments");
 		for(Vehicle v : vList)
 			if(!v.pended)
-				System.out.printf("%s\t%s\t%s\t%s\t%n", v.model, v.model, v.bid, v.highestOffer);
-		
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
+						v.model, v.model, v.bid, v.highestOffer, v.vin, v.highestBidderOrOwner);
 		Vehicle v = new Vehicle();
 		String vin;
 		Double price;
 		boolean leaveMenu = false;
+		Scanner s = new Scanner(System.in);
+		String input = "";
+		char option;
 		while(!leaveMenu) {
 			System.out.print("Would you like to accept/reject an offer(y/n): ");
-			char option = s.nextLine().toUpperCase().charAt(0);
+			input = s.nextLine();
+			if(input.length()==0)
+				continue;
+			option = input.toUpperCase().charAt(0);
+
 			if(option == 'Y') {
 				System.out.print("Enter the vehicle VIN: ");
 				vin = s.nextLine();
@@ -287,7 +353,8 @@ public class Menus {
 
 
 	public void  viewCustomerVehicles(Customer c) { // Customer Menu
-		log.debug("viewVehicles()");
+		// Display Vehicles
+		log.debug("viewCustomerVehicles()");
 		File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
 		ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
 		log.debug("folder.list()[0]=" + folder.list()[0]);
@@ -295,12 +362,12 @@ public class Menus {
 		//vList = DealershipSystem.getVehicle(fileNames);
 
 		// List Vehicles
-		System.out.println("Make\tModel\tPayments");
+		System.out.println("Make\tModel\tBid\tOffer\tVIN\tPended");
 		for(Vehicle v : vList) {
-			if(v.highestBidderOrOwner == c.creditCard)
-				System.out.printf("%s\t%s\t%s\t%s\t%n", v.model, v.model, v.monthlyPayment);
+			if(!v.pended && c.creditCard.contentEquals(v.highestBidderOrOwner))
+				System.out.printf("%s\t%s\t%s\t%s%n",
+						v.model, v.model, v.vin, v.monthlyPayment);
 		}
-		
 	}
 	
 	public void makeOffer() { // Customer Menu
