@@ -24,17 +24,18 @@ public class Main {
 		//PropertyConfigurator.configure("C:/Users/enocs/OneDrive/Documents/eclipse-workspace/project0/src/main/resources/log4j.properties");
 		//PropertyConfigurator.configure("src\\main\\resources\\log4j.properties");
 		BasicConfigurator.configure();
-		Scanner s = new Scanner(System.in);
 		Menus menus = new Menus();
-		String input = "";
 		boolean madeAccount = false;
+		String input = "";
 		char accountType;
 		while(!exitProgram) {
 			madeAccount = false;
+			Scanner s = new Scanner(System.in);
 			System.out.print("Are you an Employee(E), Customer(C), Not a Member(N), or Quit(Q): ");
 			input = s.nextLine();
 			if(input.length()==0)
 				continue;
+			//s = s.reset();
 			accountType = input.toUpperCase().charAt(0);
 
 			switch(accountType) {

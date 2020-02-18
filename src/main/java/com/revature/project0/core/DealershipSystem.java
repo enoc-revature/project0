@@ -82,7 +82,7 @@ public  class DealershipSystem<T> {
 	public static Vehicle getVehicle(String id) {
 		log.debug("DealershipSystem.getVehicle(String id)");
 		SerializationDAO dao = new SerializationDAO();
-		Vehicle veh = (Vehicle) dao.readSerial(id, 'C');
+		Vehicle veh = (Vehicle) dao.readSerial(id, 'V');
 		if(veh != null) {
 			log.debug("readSerial() returned Vehicle.");
 			return veh;
