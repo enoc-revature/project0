@@ -98,7 +98,7 @@ public class SerializationDAO<T> {
 		if(id!="employee" && id!="customer" && id!="vehicle") {
 		}
 		*/
-		log.debug("Emp ID="+id);
+		log.debug("In readSer, ID="+id);
 		char pathOption = type;
 		String locationName = "";
 		//locationName = DealershipSystem.DIRECTORYNAME + id + "s\\" + id + ".dat";

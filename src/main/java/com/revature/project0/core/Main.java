@@ -27,27 +27,31 @@ public class Main {
 		Scanner s = new Scanner(System.in);
 		Menus menus = new Menus();
 		while(!exitProgram) {
-			System.out.print("Are you an Employee(e), Customer(c), Not a Member(n), or Quit(q): ");
-			String accountType = s.nextLine();
+			System.out.print("Are you an Employee(E), Customer(C), Not a Member(N), or Quit(Q): ");
+			char accountType = s.nextLine().toUpperCase().charAt(0);
 			
-			char ch = accountType.charAt(0);
-			
-			switch(ch) {
-			case 'e' : acct = menus.employeeLogin();
+			switch(accountType) {
+			case 'E' : acct = menus.employeeLogin();
 						break;
-			case 'c' : menus.customerLogin();
+			case 'C' : acct = menus.customerLogin();
 						break;
-			case 'n'  : menus.createAccount();
+			case 'N'  : menus.createAccount();
+						acct = null;
 						break;
 			default  : exitProgram=true;
 			}
 			//exitProgram = true; // Avoid infinite loop atm
 			
-			if(acct != null) {
-				menus.employeeMenu();
-			} else {
-				System.out.println("Incorrect login or password.\n\n");
+			if(!exitProgram) {
+				if(acct == null) {
+					System.out.println("Incorrect login or password.\n\n");
+				} else if(acct instanceof Employee){
+					menus.employeeMenu();
+				} else if(acct instanceof Customer){
+					menus.customerMenu();
+				}
 			}
+			//acct = null;
 		}
 		System.out.println("Have a nice day!");
 		log.debug("Program terminated soundly.");
