@@ -80,7 +80,7 @@ public class Menus {
 			switch(option) {
 			case 'A' : viewVehicles();
 						break;
-			case 'B' : makeOffer();
+			case 'B' : makeOffer(c);
 						break;
 			case 'C' : viewCustomerVehicles(c);
 						break;
@@ -166,6 +166,9 @@ public class Menus {
 		System.out.print("VIN: ");
 		v.vin = s.nextLine();
 		
+		System.out.print("Bid Price: ");
+		v.bid = s.nextLine();
+
 		// Save vehicle
 		// Get vehicle list to make sure there 
 		// 	are no duplicates. VIN is Primary Key
@@ -200,10 +203,10 @@ public class Menus {
 		for(Vehicle v : vList) {
 			if(v.pended) 
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, null, null, v.highestOffer, v.vin, v.pended);
+						v.model, v.model, "-", "-", v.highestOffer, v.vin, v.pended);
 			else
-				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, v.bid, v.highestOffer, null, v.vin, v.pended);
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
+						v.model, v.model, v.bid, v.highestOffer, "-", v.vin, v.pended);
 		}
 	}
 
@@ -221,7 +224,7 @@ public class Menus {
 		for(Vehicle v : vList) {
 			if(v.pended) {
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, v.vin, v.highestBidderOrOwner, v.highestOffer, v.monthlyPayment);
+						v.model, v.model, v.vin, v.highestBidderOrOwner, "$"+v.principle, "$"+v.monthlyPayment);
 			}
 		}
 	}
@@ -310,73 +313,6 @@ public class Menus {
 		}
 	}
 		
-		public void chooseOffer() { // Employee
-			// Display Vehicles
-			log.debug("chooseOffers()");
-			File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
-			//String[] fileNames = file.list();
-			//vList = DealershipSystem.getVehicle(fileNames);
-
-			// List Vehicles
-			Vehicle v = new Vehicle();
-			String vin;
-			Double price;
-			boolean leaveMenu = false;
-			String input = "";
-			char option;
-			while(!leaveMenu) {
-				Scanner s = new Scanner(System.in);
-				log.debug("Still in while loop.");
-				System.out.println("Make\tModel\tBid\tOffer\tVIN");
-				ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
-				log.debug("folder.list()[0]=" + folder.list()[0]);
-				for(Vehicle vIter : vList) {
-					if(!vIter.pended) {
-						System.out.printf("%s\t%s\t%s\t%s\t%s%n",
-								vIter.model, vIter.model, vIter.bid, vIter.highestOffer, vIter.vin);;
-					}
-				}
-				System.out.print("Would you like to accept/reject an offer(y/n): ");
-				input = s.nextLine();
-				if(input.length()==0) {
-					continue;
-				}
-				option = input.toUpperCase().charAt(0);
-				if(option == 'Y') {
-					System.out.print("Enter the vehicle VIN: ");
-					vin = s.nextLine();
-					log.debug("vin="+vin);
-					System.out.print("Enter your offer: $");
-					price = s.nextDouble();
-					
-					v = DealershipSystem.getVehicle(vin);
-						
-					log.debug("After getVehicle()");
-					if(v==null) {
-						System.out.println("Vehicle does not exist.");
-						continue;
-					}
-
-					if(v.highestOffer==null) {
-						log.debug("v.highestOffer=null");
-						v.highestOffer = price.toString();
-						DealershipSystem.save(v);
-						System.out.println("Offer successful!");
-					} else if(Double.parseDouble(v.highestOffer) < price) {
-						log.debug("v.highestOffer < price");
-						v.highestOffer = price.toString();
-						DealershipSystem.save(v);
-						System.out.println("Offer successful!");
-					} else {
-						log.debug("else");
-						System.out.println("Offer is too low.");
-					}
-				} else {
-					leaveMenu = true;
-				}	
-			}
-		}
-
 
 	public void  viewCustomerVehicles(Customer c) { // Customer Menu
 		// Display Vehicles
@@ -395,8 +331,67 @@ public class Menus {
 						v.model, v.model, v.vin, v.monthlyPayment);
 		}
 	}
+
+	public void chooseOffer() { // Employee
+		// Display Vehicles
+		log.debug("chooseOffers()");
+		File folder = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
+		//String[] fileNames = file.list();
+		//vList = DealershipSystem.getVehicle(fileNames);
+
+		// List Vehicles
+		Vehicle v = new Vehicle();
+		String vin;
+		Double price;
+		boolean leaveMenu = false;
+		String input = "";
+		char option;
+		while(!leaveMenu) {
+			Scanner s = new Scanner(System.in);
+			log.debug("Still in while loop.");
+			System.out.println("Make\tModel\tBid\tOffer\tVIN");
+			ArrayList<Vehicle> vList = DealershipSystem.getVehicles(folder.list());
+			log.debug("folder.list()[0]=" + folder.list()[0]);
+			for(Vehicle vIter : vList) {
+				if(!vIter.pended) {
+					System.out.printf("%s\t%s\t%s\t%s\t%s%n",
+							vIter.model, vIter.model, vIter.bid, vIter.highestOffer, vIter.vin);;
+				}
+			}
+			System.out.print("Would you like to accept/reject an offer(y/n): ");
+			input = s.nextLine();
+			if(input.length()==0) {
+				continue;
+			}
+			option = input.toUpperCase().charAt(0);
+			if(option == 'Y') {
+				System.out.print("Enter the vehicle VIN: ");
+				vin = s.nextLine();
+				log.debug("vin="+vin);
+				
+				v = DealershipSystem.getVehicle(vin);
+					
+				log.debug("After getVehicle()");
+				if(v==null) {
+					System.out.println("Vehicle does not exist.");
+					continue;
+				} else {
+					v.principle = v.highestOffer;
+					v.bid = null;
+					v.highestOffer = null;
+					v.pended = true;
+					v.paymentDuration = "60";
+					v.monthlyPayment = DealershipSystem.calculatePayments(v.principle, v.paymentDuration);
+					DealershipSystem.save(v);
+				}
+			} else {
+				leaveMenu = true;
+			}	
+		}
+	}
+
 	
-	public void makeOffer() { // Customer Menu
+	public void makeOffer(Customer c) { // Customer Menu
 		/*
 		viewVehicles();
 		Vehicle v = new Vehicle();
@@ -452,7 +447,7 @@ public class Menus {
 							vIter.model, vIter.model, vIter.bid, vIter.highestOffer, vIter.vin);;
 				}
 			}
-			System.out.print("Would you like to accept/reject an offer(y/n): ");
+			System.out.print("Would you like to make an offer(y/n)? ");
 			input = s.nextLine();
 			if(input.length()==0) {
 				continue;
@@ -462,20 +457,31 @@ public class Menus {
 				System.out.print("Enter the vehicle VIN: ");
 				vin = s.nextLine();
 				log.debug("vin="+vin);
+				System.out.print("Enter your offer: $");
+				price = s.nextDouble();
 				
 				v = DealershipSystem.getVehicle(vin);
-					
 				log.debug("After getVehicle()");
 				if(v==null) {
 					System.out.println("Vehicle does not exist.");
 					continue;
-				} else {
-					v.pended = true;
-					v.principle = v.highestOffer;
-					v.bid = null;
-					v.highestOffer = null;
-					DealershipSystem.save(v);
 				}
+				if(DealershipSystem.rejectPended(v)) {
+					System.out.println("Cannot make offer on a vehicle that has been sold.");
+				} else if(v.highestOffer == null) {
+					v.highestOffer = price.toString();
+					v.highestBidderOrOwner = c.creditCard;
+					DealershipSystem.save(v);
+					System.out.println("Offer successful!");
+				} else if(Double.parseDouble(v.highestOffer) < price) {
+					v.highestOffer = price.toString();
+					v.highestBidderOrOwner = c.creditCard;
+					DealershipSystem.save(v);
+					System.out.println("Offer successful!");
+				} else {
+					System.out.println("Offer is too low.");
+				}	
+				
 			} else {
 				leaveMenu = true;
 			}	

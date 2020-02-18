@@ -14,13 +14,13 @@ public  class DealershipSystem<T> {
 	public final static String DIRECTORYNAME = "src\\main\\resources\\DAOFiles\\";
 	public final static double INTEREST = 0.05;
 
-	public static double calculatePayments(String principle, String duration){
+	public static String calculatePayments(String principle, String duration){
 		log.debug("DealershipSystem.calculatePayments(String principle, String duration)");
 		double p = Double.parseDouble(principle);
 		double d = Double.parseDouble(duration);
 		double totalInterest = d*DealershipSystem.INTEREST;
 		double totalWithInterest = p*totalInterest;
-		return totalWithInterest/d;
+		return Double.toString(totalWithInterest/d);
 	}
 	
 	public static boolean checkEmployeeCredentials(String id, String pw) {

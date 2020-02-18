@@ -13,17 +13,6 @@ public class Main {
 	static boolean isEmployee;
 	static boolean exitProgram; //At almost any point, the user can exit the program.
 	public static void main(String[] args) {
-		//String eclipseAbsolute = "C:\\Users\\enocs\\Downloads\\eclipse-jee-2019-12-R-win32-x86_64\\eclipse";
-		//String log4jAbsolute = "C:\\Users\\enocs\\OneDrive\\Documents\\eclipse-workspace\\project0\\src\\main\\resources";
-		//String relativePath = "../../OneDrive/Documents/eclipse-workspace/project0/src/main/resources/log4j.properties";
-		//String relativePath = "..\\..\\OneDrive\\Documents\\eclipse-workspace\\project0\\src\\main\\resources\\log4j.properties";
-		//PropertyConfigurator.configure(relativePath);
-		//PropertyConfigurator.configure("src/main/resources/log4j.properties");
-		//PropertyConfigurator.configure(".");
-		//PropertyConfigurator.configure("C:\\Users\\enocs\\OneDrive\\Documents\\eclipse-workspace\\project0\\src\\main\\resources\\log4j.properties");
-		//PropertyConfigurator.configure("C:/Users/enocs/OneDrive/Documents/eclipse-workspace/project0/src/main/resources/log4j.properties");
-		//PropertyConfigurator.configure("src\\main\\resources\\log4j.properties");
-		BasicConfigurator.configure();
 		Menus menus = new Menus();
 		boolean madeAccount = false;
 		String input = "";
@@ -35,7 +24,6 @@ public class Main {
 			input = s.nextLine();
 			if(input.length()==0)
 				continue;
-			//s = s.reset();
 			accountType = input.toUpperCase().charAt(0);
 
 			switch(accountType) {
