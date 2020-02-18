@@ -24,7 +24,7 @@ public class TestProject0 {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		BasicConfigurator.configure();
+		//BasicConfigurator.configure();
 	}
 
 	@AfterClass
@@ -33,7 +33,7 @@ public class TestProject0 {
 
 	@Before
 	public void setUp() throws Exception {
-		BasicConfigurator.configure();
+		//BasicConfigurator.configure();
 	}
 
 	@After
@@ -62,13 +62,13 @@ public class TestProject0 {
 		File file = new File(fileName);
 		if(file.exists()) // Kill file before dao writes it
 			file.delete();
-		s.nextInt(); // Check that file is not in folder
+		//s.nextInt(); // Check that file is not in folder
 		dao.writeSerial(e);
     	//System.out.println(file.getPath());
     	//System.out.println(expectation);
     	//System.out.println(fileName);
     	assertEquals(fileName, file.getPath());
-		s.nextInt(); // Check that file is in folder
+		//s.nextInt(); // Check that file is in folder
 		if(file.exists()) // Kill file because it's not part of the program
 			file.delete();
 	}
@@ -90,12 +90,12 @@ public class TestProject0 {
 		File file = new File(fileName);
 		if(file.exists()) // Kill file before dao writes it
 			file.delete();
-		s.nextInt(); // Check that file is not in folder
+		//s.nextInt(); // Check that file is not in folder
 		dao.writeSerial(c);
     	//System.out.println(file.getPath());
     	//System.out.println(expectation);
     	assertEquals(fileName, file.getPath());
-		s.nextInt(); // Check that file is in folder
+		//s.nextInt(); // Check that file is in folder
 		if(file.exists()) // Kill file because it's not part of the program
 			file.delete();
 	}
@@ -117,12 +117,12 @@ public class TestProject0 {
 		File file = new File(fileName);
 		if(file.exists()) // Kill file before dao writes it
 			file.delete();
-		s.nextInt(); // Check that file is not in folder
+		//s.nextInt(); // Check that file is not in folder
 		dao.writeSerial(v);
     	//System.out.println(file.getPath());
     	//System.out.println(expectation);
     	assertEquals(fileName, file.getPath());
-		s.nextInt(); // Check that file is in folder
+		//s.nextInt(); // Check that file is in folder
 		if(file.exists()) // Kill file because it's not part of the program
 			file.delete();
 	}

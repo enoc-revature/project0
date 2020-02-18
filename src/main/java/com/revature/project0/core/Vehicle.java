@@ -20,12 +20,12 @@ public class Vehicle implements Serializable{
 	//public transient ArrayList<String >offer;
 	//public transient String highestBid;
 	//public transient String lowestOffer;
-	public String bid;
-	public String highestOffer;
+	public String bid = "";
+	public String highestOffer = "";
 	public String vin;
 	public String highestBidderOrOwner = "Dealership";
 	public String monthlyPayment;
-	public String principle; // offer that was accepted
+	public String principle = ""; // offer that was accepted
 	public String paymentDuration; // in months
 	public boolean pended;
 }

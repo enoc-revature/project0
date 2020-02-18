@@ -180,13 +180,16 @@ public class Menus {
 		String id = s.nextLine();
 		//File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\");
 		File file = new File(DealershipSystem.DIRECTORYNAME + "vehicles\\_" + id + ".dat");
-		if(file.exists())
+		if(file.exists()) {
 			try {
 				file.delete();
 			} catch(SecurityException e) {
 				log.error("Unable to access file due to file access permissions.");
 				e.printStackTrace();
 			} 
+		} else {
+			System.out.println("Vehicle is already not in the system.");
+		}
 	}
 		
 	public void  viewVehicles() {
@@ -203,10 +206,10 @@ public class Menus {
 		for(Vehicle v : vList) {
 			if(v.pended) 
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, "-", "-", v.principle, v.vin, v.pended);
+						v.model, v.model, "-", "-", "$"+v.principle, v.vin, v.pended);
 			else
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, v.bid, v.highestOffer, "-", v.vin, v.pended);
+						v.model, v.model, "$"+v.bid, "$"+v.highestOffer, "-", v.vin, v.pended);
 		}
 	}
 
@@ -278,7 +281,7 @@ public class Menus {
 		for(Vehicle v : vList)
 			if(!v.pended)
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
-						v.model, v.model, v.bid, v.highestOffer, v.vin, v.highestBidderOrOwner);
+						v.model, v.model, "$"+v.bid, "$"+v.highestOffer, v.vin, v.highestBidderOrOwner);
 		Vehicle v = new Vehicle();
 		String vin;
 		Double price;
@@ -355,10 +358,10 @@ public class Menus {
 			for(Vehicle vIter : vList) {
 				if(!vIter.pended) {
 					System.out.printf("%s\t%s\t%s\t%s\t%s%n",
-							vIter.model, vIter.model, vIter.bid, vIter.highestOffer, vIter.vin);;
+							vIter.model, vIter.model, "$"+vIter.bid, "$"+vIter.highestOffer, vIter.vin);;
 				}
 			}
-			System.out.print("Would you like to accept/reject an offer(y/n): ");
+			System.out.print("Would you like to accept an offer(y/n): ");
 			input = s.nextLine();
 			if(input.length()==0) {
 				continue;
@@ -399,7 +402,7 @@ public class Menus {
 		Double price;
 		boolean leaveMenu = false;
 		while(!leaveMenu) {
-			System.out.print("Would you like to accept/reject an offer(y/n): ");
+			System.out.print("Would you like to accept an offer(y/n): ");
 			char option = s.nextLine().toUpperCase().charAt(0);
 			if(option == 'Y') {
 				System.out.print("Enter the vehicle VIN: ");
@@ -444,7 +447,7 @@ public class Menus {
 			for(Vehicle vIter : vList) {
 				if(!vIter.pended) {
 					System.out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s%n",
-							vIter.model, vIter.model, vIter.year, vIter.bid, vIter.highestOffer, vIter.vin, vIter.pended);;
+							vIter.model, vIter.model, vIter.year, "$"+vIter.bid, "$"+vIter.highestOffer, vIter.vin, vIter.pended);;
 				} else {
 					System.out.printf("%s\t%s\t%s\t%s\t%s\t%s%n",
 							vIter.model, vIter.model, vIter.year, "-", "-", vIter.vin, vIter.pended);;
@@ -471,7 +474,7 @@ public class Menus {
 				}
 				if(DealershipSystem.rejectPended(v)) {
 					System.out.println("Cannot make offer on a vehicle that has been sold.");
-				} else if(v.highestOffer == null) {
+				} else if(v.highestOffer.isEmpty()) {
 					v.highestOffer = price.toString();
 					v.highestBidderOrOwner = c.creditCard;
 					DealershipSystem.save(v);
